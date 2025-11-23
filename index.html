@@ -1508,6 +1508,46 @@
             background-color: #27AE60;
         }
 
+        /* 複製按鈕 (預設為灰色背景) */
+        .copy-btn {
+            background-color: #95a5a6;
+        }
+        
+        .copy-btn:hover {
+            background-color: #7f8c8d;
+        }
+        
+        /* 地圖書籤按鈕 */
+        .map-bookmark-btn {
+            background-color: #3498db; /* 藍色 */
+            text-decoration: none; /* 移除 a 標籤底線 */
+        }
+
+        .map-bookmark-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* 編輯切換按鈕 (預設為金色邊框，白色背景) */
+        .edit-toggle-btn {
+            background-color: white;
+            border: 2px solid var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        .edit-toggle-btn:hover {
+            background-color: #fcf8e3;
+        }
+        
+        /* 編輯模式開啟時的狀態 */
+        .edit-toggle-btn.active {
+            background-color: var(--danger);
+            border-color: var(--danger);
+            color: white;
+        }
+
+        .edit-toggle-btn.active:hover {
+            background-color: #c0392b;
+        }
 
         /* --- Editing Modal/Form --- */
         .edit-modal {
