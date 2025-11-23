@@ -322,14 +322,15 @@
                             </button>
                         </div>
                     `;
-                } else {
-                    headerContent = `
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" ${isCompleted ? 'checked' : ''} 
-                                onchange="toggleComplete(${dayIndex}, ${eventIndex}, this)">
-                        </label>
-                    `;
-                }
+                } 
+                // else {
+                //     headerContent = `
+                //         <label class="checkbox-wrapper">
+                //             <input type="checkbox" ${isCompleted ? 'checked' : ''} 
+                //                 onchange="toggleComplete(${dayIndex}, ${eventIndex}, this)">
+                //         </label>
+                //     `;
+                // }
 
                 // 地圖圖標和連結
                 const mapIconHTML = event.mapURL ? `
