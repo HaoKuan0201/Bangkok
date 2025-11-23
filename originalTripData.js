@@ -37,15 +37,15 @@ const originalTripData = {
                     "mapURL": "",
                     "transport": "BTS",
                     "cost": "58",
-                    "notes": "；飯店在 Ratchathewi 站附近；1號出口；"
+                    "notes": "飯店在 Ratchathewi 站附近；1號出口；"
                 },
                 {
                     "time": "22:30",
-                    "location": "抵達 飯店 BaanSu Hostel",
+                    "location": "抵達 飯店 BaanSu Hostel บ้านซูโฮสเทล",
                     "mapURL": "https://maps.app.goo.gl/4RVqrgHZEdgMvz9M9",
                     "transport": "步行/無",
                     "cost": "0",
-                    "notes": "บ้านซูโฮสเทล；\nถนนนี้ไปถึงที่นั่นไหม? “Does this road come here?”（這條路會到這裡嗎？）"
+                    "notes": "ถนนนี้ไปถึงที่นั่นไหม? “Does this road come here?”（這條路會到這裡嗎？）"
                 }
             ]
         },
