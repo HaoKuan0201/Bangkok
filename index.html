@@ -770,6 +770,15 @@
                     </a>
                 ` : '';
 
+                // 備註連結圖標和連結
+                const noteIconHTML = event.noteURL ? `
+                    <a href="${event.noteURL}" target="_blank" class="note-icon" title="查看備註連結">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-4 15c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1h2c.55 0 1 .45 1 1v2zm0-4c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1h2c.55 0 1 .45 1 1v2zm6 4c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1h2c.55 0 1 .45 1 1v2zm0-4c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1h2c.55 0 1 .45 1 1v2z"/>
+                        </svg>
+                    </a>
+                ` : '';
+
 
                 card.innerHTML = `
                     <div class="event-header">
@@ -882,7 +891,8 @@
                 const event = appData.days[dayIndex].events[eventIndex];
                 document.getElementById('event-time-input').value = event.time;
                 document.getElementById('event-location-input').value = event.location;
-                document.getElementById('event-map-url-input').value = event.mapURL || ''; // 新增
+                document.getElementById('event-map-url-input').value = event.mapURL || '';
+                document.getElementById('event-note-url-input').value = event.noteURL || '';
                 document.getElementById('event-transport-input').value = event.transport;
                 document.getElementById('event-estimated-cost-input').value = event.cost;
                 document.getElementById('event-notes-input').value = event.notes;
@@ -913,7 +923,8 @@
             const newEvent = {
                 time: document.getElementById('event-time-input').value,
                 location: document.getElementById('event-location-input').value,
-                mapURL: document.getElementById('event-map-url-input').value.trim(), // 新增
+                mapURL: document.getElementById('event-map-url-input').value.trim(),
+                noteURL: document.getElementById('event-note-url-input').value.trim(),
                 transport: document.getElementById('event-transport-input').value,
                 cost: document.getElementById('event-estimated-cost-input').value || '0',
                 notes: document.getElementById('event-notes-input').value
