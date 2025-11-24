@@ -25,6 +25,34 @@
             --success: #2ECC71;
         }
 
+/* 深色主題 */
+        [data-theme="dark"] {
+            --primary-color: #ECD38C;   /* 金色主色（在暗底很好看） */
+            --accent-color: #F1C40F;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-light: #bbbbbb;
+            --header-bg: #1a1a1a;
+            
+            /* 讓原本的淺灰背景變深 */
+            background-color: var(--bg-color);
+            color: var(--text-main);
+        }
+
+        /* 深色模式下一些元件微調 */
+        [data-theme="dark"] .app-header { background-color: var(--header-bg); }
+        [data-theme="dark"] .day-nav { background-color: #1e1e1e; }
+        [data-theme="dark"] .nav-btn { background: #2d2d2d; border-color: #444; color: #ddd; }
+        [data-theme="dark"] .nav-btn.active { background-color: var(--primary-color); color: #000; }
+        [data-theme="dark"] .event-card { background: var(--card-bg); border-color: #333; }
+        [data-theme="dark"] .cost-section { background-color: #2a2a2a; border-color: #444; color: #ddd; }
+        [data-theme="dark"] .daily-summary { background: linear-gradient(135deg, #2c2c2c, #1a1a1a); }
+        [data-theme="dark"] .highlight { background-color: #5D3A00; color: #FFD700; }
+        [data-theme="dark"] .modal-content { background: #1e1e1e; color: #e0e0e0; }
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group textarea { background: #2a2a2a; border-color: #444; color: #e0e0e0; }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
