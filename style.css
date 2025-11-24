@@ -46,12 +46,12 @@ body[data-theme="dark"] {
     body[data-theme="dark"] { background: var(--bg-color); color: var(--text-main); }
     body[data-theme="dark"] .app-header { background: var(--header-bg); }
     body[data-theme="dark"] .day-nav { background: #1e1e1e; }
-    body[data-theme="dark"] .nav-btn { background: #2a2a2a; border-color: #444; color: #ccc; }
+    body[data-theme="dark"] .nav-btn { background: #2c3e50; border-color: #444; color: #ccc; }
     body[data-theme="dark"] .nav-btn.active { background: var(--accent-color); color: #000; }
     body[data-theme="dark"] .event-card { background: var(--card-bg); border-color: #333; }
     body[data-theme="dark"] .event-time { background: #2a2a2a; }
     body[data-theme="dark"] .cost-section { background: #222; border-color: #444; color: #ddd; }
-    body[data-theme="dark"] .daily-summary { background: linear-gradient(135deg, #222, #111); }
+    body[data-theme="dark"] .daily-summary { background: var(--card-bg); }
     body[data-theme="dark"] .highlight { background: #5D3A00; color: #FFD700; }
     body[data-theme="dark"] .modal-content { background: #1e1e1e; color: #e0e0e0; }
     body[data-theme="dark"] .form-group input,
@@ -500,7 +500,7 @@ body[data-theme="dark"] {
 
         .edit-toggle-btn {
             background-color: var(--accent-color);
-            color: var(--primary-color);
+            color: #2C3E50;
             border: none;
             border-radius: 8px;
             font-weight: bold;
@@ -617,8 +617,8 @@ body[data-theme="dark"] {
         }
 
         .cancel-btn {
-            background-color: #bdc3c7;
-            color: var(--text-main);
+            background-color: var(--danger);
+            color: white;
         }
         
         /* Toast Notification */
