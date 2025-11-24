@@ -85,7 +85,7 @@ const originalTripData = {
                     "transport": "步行",
                     "cost": "0",
                     "notes": "",
-                    "mapURL": "https://maps.app.goo.gl/CbMoUvckVezo2Day9", 
+                    "mapURL": "https://maps.app.goo.gl/CbMoUvckVezo2Day9",
                     "noteURL": "https://www.youtube.com/watch?v=ZRgRyB1Gdqk"
                 },
                 {
@@ -235,11 +235,12 @@ const originalTripData = {
                 },
                 {
                     "time": "20:05",
-                    "location": "BTS Ha Yaek Lat Phrao（N9）→ Ratchathewi（N1）",
-                    "mapURL": "",
+                    "location": "BTS 回飯店",
+                    "mapURL": "https://maps.app.goo.gl/fwtscEvcs2djsxit8",
+                    "noteURL": "",
                     "transport": "BTS",
                     "cost": "58",
-                    "notes": "1號出口回飯店"
+                    "notes": "BTS Ha Yaek Lat Phrao（N9）→ Ratchathewi（N1）；1號出口回飯店"
                 }
             ]
         },
@@ -448,7 +449,7 @@ const originalTripData = {
                     "transport": "飛機",
                     "cost": "0",
                     "notes": ""
-                },
+                }
             ]
         }
     ]
