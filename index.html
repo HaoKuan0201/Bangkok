@@ -614,7 +614,7 @@ ${notesHTML}
             `;
 
             // 將內容按頓號/逗號分割成子項目 (確保分隔符號不在括號內)
-            const contentItems = content.split(/、(?![^(]*\))|, (?![^(]*\))/).map(item => item.trim()).filter(item => item.length > 0);
+            const contentItems = content.split(/\s*(?:、|,)\s*(?![^(]*\))/).map(item => item.trim()).filter(item => item.length > 0);
 
             contentItems.forEach(item => {
                 // 對分割後的子項目套用高亮
