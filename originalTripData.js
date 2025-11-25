@@ -494,9 +494,10 @@ const originalTripData = {
                     "time": "2:45-7:15",
                     "location": "Thai Lion Air SL390",
                     "mapURL": "",
+                    "noteURL": "",
                     "transport": "飛機",
                     "cost": "0",
-                    "notes": ""
+                    "notes": "我: CDKUOT\n媽: QMWWYM\n妹: CFDLRA"
                 }
             ]
         }
