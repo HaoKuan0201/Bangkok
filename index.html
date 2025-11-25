@@ -21,6 +21,16 @@
             <!-- 按鈕控制群組 -->
             <div class="header-controls">
 
+<!-- 重新從伺服器載入原始資料 -->
+<button id="reload-server-data-btn" class="icon-btn reload-server-btn" title="讀取伺服器資料">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap=" german" stroke-linejoin="round">
+        <path d="M23 4v6h-6"></path>
+        <path d="M1 20v-6h6"></path>
+        <path d="M20.49 9A9 9 0 0 0 5.51 9"></path>
+        <path d="M3.51 15A9 9 0 0 0 18.49 15"></path>
+    </svg>
+</button>
+                
                 <!-- 在 .header-controls 裡面，放在 edit-toggle-btn 前面或後面都可以 -->
 <button id="theme-toggle-btn" class="icon-btn theme-toggle-btn" title="切換深色/淺色主題">
     <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -791,6 +801,36 @@ ${notesHTML}
             }
         }
         // --- 備註收折功能邏輯 (結束) ---
+
+        // ===== 重新從伺服器載入原始資料 =====
+    document.getElementById('reload-server-data-btn')?.addEventListener('click', () => {
+        const userConfirmed = confirm(
+            "⚠️ 這會把你目前在 localStorage 裡的所有自訂行程、記帳、完成狀態全部覆蓋，恢復成最一開始的原始行程！\n\n確定要繼續嗎？"
+        );
+
+        if (!userConfirmed) return;
+
+        // 1. 用原始資料覆蓋目前記憶體中的 appData
+        appData = JSON.parse(JSON.stringify(originalTripData));   // 深拷貝，避免之後改到原始資料
+
+        // 2. 清空所有相關的 localStorage（行程、打勾、記帳…）
+        localStorage.removeItem(STORAGE_KEY);
+
+        // 清除所有「完成」與「實支」的 key（以 trip_ 開頭的）
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && (key.startsWith('trip_') || key.startsWith('bangkokTripData'))) {
+                localStorage.removeItem(key);
+            }
+        }
+
+        // 3. 重新寫入乾淨的原始資料
+        saveData();   // 會把新的 appData 存進 localStorage
+
+        // 4. 提示成功 + 重新整理畫面
+        showToast('✅ 已成功從伺服器重新載入原始行程！');
+        setTimeout(() => location.reload(), 1200);   // 稍微延遲讓 toast 能看到
+    });
     </script>
 </body>
 </html>
