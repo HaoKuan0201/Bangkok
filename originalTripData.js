@@ -13,7 +13,7 @@ const originalTripData = {
                     "mapURL": "",
                     "transport": "飛機",
                     "cost": "0",
-                    "notes": ""
+                    "notes": "我: KSGWFZ\n媽: SQCVPA\n妹: DXWVRV"
                 },
                 {
                     "time": "16:05",
