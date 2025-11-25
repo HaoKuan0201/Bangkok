@@ -857,13 +857,32 @@ body[data-theme="dark"] .highlight {
 
         /* 下拉選單內的按鈕樣式調整 */
         .more-menu-dropdown .icon-btn {
-            width: 100%;
-            border-radius: 4px;
-            justify-content: flex-start;
-            padding: 8px 12px;
-            font-size: 14px;
-            height: auto;
-        }
+    width: 100%;
+    border-radius: 4px;
+    justify-content: flex-start;
+    padding: 8px 12px;
+    font-size: 14px;
+    height: auto;
+
+    /* 💡 修正：使用主要文字色 */
+    color: var(--text-main, #333); 
+    background-color: transparent; /* 保持按鈕背景透明 */
+}
+
+.more-menu-dropdown .icon-btn:hover {
+    background-color: #f0f0f0;
+    color: var(--text-main, #333);
+}
+
+/* 確保暗色模式下的按鈕文字顏色不會受影響 */
+body[data-theme="dark"] .more-menu-dropdown .icon-btn {
+    color: var(--text-main); /* 暗色模式下: #d1dde6 */
+    background-color: transparent;
+}
+
+body[data-theme="dark"] .more-menu-dropdown .icon-btn:hover {
+    background-color: #333;
+}
         
         .more-menu-dropdown .icon-btn svg {
             margin-right: 8px;
