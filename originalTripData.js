@@ -27,9 +27,10 @@ const originalTripData = {
                     "time": "19:00-21:30",
                     "location": "Save One Go Market 逛街用餐",
                     "mapURL": "https://maps.app.goo.gl/8oMdiRPceXYnsXNq8",
+                    "noteURL": "https://maps.app.goo.gl/4aPxYPqDVpryj7zZ7",
                     "transport": "Bolt",
                     "cost": "250",
-                    "notes": "建議費用：160-250 泰銖 (車費)；免費廁所)；ต้องจ่ายค่าทางด่วนไหม?（我需要繳過路費嗎？）"
+                    "notes": "ต้องจ่ายค่าทางด่วนไหม?（我需要繳過路費嗎？）\n建議費用：160-250 泰銖 (車費)；免費廁所)"
                 },
                 {
                     "time": "21:30",
@@ -43,6 +44,7 @@ const originalTripData = {
                     "time": "22:30",
                     "location": "抵達 飯店 BaanSu Hostel บ้านซูโฮสเทล",
                     "mapURL": "https://maps.app.goo.gl/4RVqrgHZEdgMvz9M9",
+                    "noteURL": "https://maps.app.goo.gl/YbGyCr8CWHu6LwTR7",
                     "transport": "步行/無",
                     "cost": "0",
                     "notes": "ถนนนี้ไปถึงที่นั่นไหม? “Does this road come here?”（這條路會到這裡嗎？）"
@@ -59,58 +61,64 @@ const originalTripData = {
                     "time": "08:00-08:40",
                     "location": "ปุ้ย อาหารตามสั่ง 早餐",
                     "mapURL": "https://maps.app.goo.gl/KQM1mnCba3ha8DuW6",
+                    "noteURL": "",
+                    "transport": "步行",
+                    "cost": "0",
+                    "notes": "Little spicy\n15.冬蔭功湯 ฿80\n16.打拋脆皮豬肉 ฿80\n17.豬肉炒粿條 ฿60"
+                },
+                {
+                    "time": "08:50",
+                    "location": "Saphan Hua Chang 碼頭 → Pratunam 碼頭",
+                    "mapURL": "https://maps.app.goo.gl/FM8bpy6NqU7Gy3dw5",
+                    "noteURL": "",
+                    "transport": "船",
+                    "cost": "12",
+                    "notes": "ท่าเรือประตูน้ำ"
+                },
+                {
+                    "time": "09:00-09:30",
+                    "location": "Grand Superrich 換匯",
+                    "mapURL": "https://maps.app.goo.gl/4xpb8jh8b5wAn8uf8",
+                    "noteURL": "https://maps.app.goo.gl/xYkSvtvEZtjjzPik7",
+                    "transport": "步行",
+                    "cost": "0",
+                    "notes": "帶護照、填手機號碼\n換好去Mumucha買飲料"
+                },
+                {
+                    "time": "09:30-10:30",
+                    "location": "Big C",
+                    "mapURL": "https://maps.app.goo.gl/CbMoUvckVezo2Day9",
+                    "noteURL": "",
+                    "transport": "步行",
+                    "cost": "0",
+                    "notes": "1F - Moshi Moshi\n2F - Cha Tra Mue( ชาเขียวน้ำตาลโตนดวิปซีส Green Tea Palm Sugar with Whipped Cheese 30% ฿65)"
+                },
+                {
+                    "time": "10:30-11:40",
+                    "location": "象神、Central World",
+                    "mapURL": "https://maps.app.goo.gl/NrcaKHXyhsXWvET4A",
+                    "noteURL": "",
+                    "transport": "步行",
+                    "cost": "0",
+                    "notes": "2F - THE EDITOR'S MARKET、with.it\n4F - vibes\n5F - avocado、Nature 、HIGH SCHOOL、JS Art I Shop"
+                },
+                {
+                    "time": "11:40-12:00",
+                    "location": "四面佛",
+                    "mapURL": "https://maps.app.goo.gl/BxTUyirb7iHzWAxCA",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
                     "notes": ""
                 },
                 {
-                    "time": "08:50",
-                    "location": "Saphan Hua Chang 碼頭 → Pratunam 碼頭",
-                    "transport": "船",
-                    "cost": "11",
-                    "notes": "船票 11 泰銖；ท่าเรือประตูน้ำ",
-                    "mapURL": "https://maps.app.goo.gl/cFProxMxw1SshFdL8"
-                },
-                {
-                    "time": "09:00-09:30",
-                    "location": "Grand Superrich 換匯",
-                    "transport": "步行",
-                    "cost": "0",
-                    "notes": "步行前往",
-                    "mapURL": "https://maps.app.goo.gl/4xpb8jh8b5wAn8uf8"
-                },
-                {
-                    "time": "09:30-10:30",
-                    "location": "Big C",
-                    "transport": "步行",
-                    "cost": "0",
-                    "notes": "",
-                    "mapURL": "https://maps.app.goo.gl/CbMoUvckVezo2Day9",
-                    "noteURL": "https://www.youtube.com/watch?v=ZRgRyB1Gdqk"
-                },
-                {
-                    "time": "10:30-11:40",
-                    "location": "象神、Central World",
-                    "transport": "步行",
-                    "cost": "0",
-                    "notes": "Central World 10點才開",
-                    "mapURL": "https://maps.app.goo.gl/NrcaKHXyhsXWvET4A"
-                },
-                {
-                    "time": "11:40-12:00",
-                    "location": "四面佛",
-                    "transport": "步行",
-                    "cost": "0",
-                    "notes": "步行前往",
-                    "mapURL": "https://maps.app.goo.gl/BxTUyirb7iHzWAxCA"
-                },
-                {
                     "time": "12:15-13:45",
                     "location": "Siam Center、暹羅廣場、20泰銖生醃海鮮",
+                    "mapURL": "https://reurl.cc/Vm8Mnn",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
-                    "notes": "午餐/逛街",
-                    "mapURL": "https://maps.app.goo.gl/KcudWuaC1ggNgHhf8"
+                    "notes": "20泰銖生醃海鮮 - 醃鮭魚(แซลมอนดอง 15 ชิ้น ฿100)、醃蝦(กุ้งดอง 3 ชิ้น ฿20)"
                 },
                 {
                     "time": "13:50",
@@ -123,34 +131,38 @@ const originalTripData = {
                 {
                     "time": "14:10-16:20",
                     "location": "Terminal 21 用餐&逛街",
+                    "mapURL": "https://maps.app.goo.gl/SksHVhrP9dQqB6sv5",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
-                    "notes": "步行前往",
-                    "mapURL": "https://maps.app.goo.gl/SksHVhrP9dQqB6sv5"
+                    "notes": "LG - Gourmet Market\nGF - JASPAL\n1F - SOS、JS Art I Shop\n4F - Cha Tra Mue\n5F (Pier21) - 1.炸雞฿30、2.火山排骨(11號) ฿60、9.豬腳飯、22.烤鴨翡翠麵、24.芒果糯米飯(12號) ฿35、30 - 冰淇淋甜筒 泰奶(1號)฿15；椰殼冰淇淋(4號)฿28；考椰子汁(6號)฿28；新鮮椰子汁(7號)฿35、普通3.海南雞飯"
                 },
                 {
                     "time": "16:00",
                     "location": "MRT Sukhumvit（BL22）→Hua Lamphong（BL28）",
+                    "mapURL": "",
+                    "noteURL": "",
                     "transport": "MRT",
-                    "cost": "27",
-                    "notes": "3號出口",
-                    "mapURL": ""
+                    "cost": "30",
+                    "notes": "3號出口"
                 },
                 {
                     "time": "17:05-18:30",
                     "location": "Aey Seafood 晚餐",
+                    "mapURL": "https://maps.app.goo.gl/TTe8VaJ6NU5vztoQ6",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
-                    "notes": "步行前往",
-                    "mapURL": "https://maps.app.goo.gl/TTe8VaJ6NU5vztoQ6"
+                    "notes": "咖哩粉炒蟹(Stir Fried Crab Meat In Curry Power) ฿290\n鮮蝦粉絲(กุ้งอบวุ้นเส้น) ฿70\n魚露炸鱸魚(Deep Fried Sea Bass In Fish Sauce) ฿390\n奶油蒜香烤扇貝 (Scallop Baked with Butter & Garlic) ฿120"
                 },
                 {
                     "time": "18:30-20:30",
                     "location": "朱拉隆功夜市",
+                    "mapURL": "https://reurl.cc/0a6LWo",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
-                    "notes": "步行前往",
-                    "mapURL": ""
+                    "notes": "Pork Satay Nai Song - 豬肉沙爹(หมูสะเต๊ะนายชัง 10 ไม้ ฿110)、外帶(เอากลับบ้าน)"
                 },
                 {
                     "time": "20:40",
@@ -169,9 +181,19 @@ const originalTripData = {
             "theme": "市集日",
             "events": [
                 {
+                    "time": "08:35",
+                    "location": "飯店出發",
+                    "mapURL": "",
+                    "noteURL": "",
+                    "transport": "步行",
+                    "cost": "0",
+                    "notes": ""
+                },
+                {
                     "time": "08:45",
                     "location": "Saphan Hua Chang碼頭 → Panfa Leelard 碼頭",
-                    "mapURL": "https://maps.app.goo.gl/9HTvdvC4obKFKnts6",
+                    "mapURL": "https://maps.app.goo.gl/FM8bpy6NqU7Gy3dw5",
+                    "noteURL": "",
                     "transport": "船",
                     "cost": "12",
                     "notes": "ท่าเรือผ่านฟ้าลีลาศ"
@@ -179,7 +201,8 @@ const originalTripData = {
                 {
                     "time": "09:00-09:50",
                     "location": "王孫寺",
-                    "mapURL": "https://maps.app.goo.gl/2qx4Nzz8Eo6TYd3A7",
+                    "mapURL": "https://maps.app.goo.gl/YQsR3xxebbojSdfW6",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "20",
                     "notes": "門票 20 泰銖；收費廁所"
@@ -187,18 +210,20 @@ const originalTripData = {
                 {
                     "time": "10:05-11:50",
                     "location": "南龍傳統市場 用餐",
-                    "mapURL": "https://maps.app.goo.gl/6QVgSKC8jN6qraAv8",
+                    "mapURL": "https://reurl.cc/QV4nXq",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
-                    "notes": "市場內有廁所"
+                    "notes": "市場內有廁所\nNeua Tun Nang Loeng - เกาเหลา ฿100 (2 ชิ้น)、(Extra bowl and spoon, please. กรุณาให้ชามและช้อนเพิ่มให้ฉันด้วย)\nYa Chaem's Kanom Bueang Yuan - 加蛋(ใส่ไข่ ฿60)、不加蛋(ไม่ใส่ไข่ ฿60)\nJib Kee 洽記燒鴨 - Roasted duck (เป็ดย่าง Small ฿120 )、Crispy pork (หมูกรอบ Small ฿100)、Duck intestines (ไส้เป็ด)"
                 },
                 {
                     "time": "12:00-13:00",
                     "location": "Nangloeng Market → Wat Phai Tan (往恰圖恰方向)",
                     "mapURL": "",
+                    "noteURL": "",
                     "transport": "Bolt/公車",
                     "cost": "160",
-                    "notes": "車費預計 130-160 泰銖"
+                    "notes": "公車 - 44 EV (2-42)、8 EV (2-38)\nBolt - 車費預計 130-160 泰銖"
                 },
                 {
                     "time": "13:10-16:30",
@@ -251,20 +276,31 @@ const originalTripData = {
             "theme": "寺廟與河畔",
             "events": [
                 {
+                    "time": "08:10",
+                    "location": "飯店出發",
+                    "mapURL": "",
+                    "noteURL": "",
+                    "transport": "步行",
+                    "cost": "0",
+                    "notes": ""
+                },
+                {
                     "time": "08:30-10:30",
                     "location": "大皇宮",
                     "mapURL": "https://maps.app.goo.gl/A7gGMbr39LykyHWDA",
+                    "noteURL": "",
                     "transport": "Bolt",
                     "cost": "500",
-                    "notes": "車費預計 100-150 泰銖；門票 500 泰銖；免費廁所"
+                    "notes": "車費預計 100~150 泰銖\n門票 500 泰銖\n免費廁所"
                 },
                 {
                     "time": "10:50-11:50",
                     "location": "ครัวพี่น้อง อาหารตามสั่ง 午餐",
                     "mapURL": "https://maps.app.goo.gl/2benCaRwUvNQp7bN7",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
-                    "notes": "步行前往"
+                    "notes": "ข้าวกะเพรา หมูกรอบ พิเศษ ฿70\nผัดไทยใส่ไข่ สูตรคุณแม่ ทะเล พิเศษ ฿80\nก๋วยเตี๋ยวสายคั่ว หมู+หมึกกรอบ พิเศษ ฿70"
                 },
                 {
                     "time": "11:55-13:00",
@@ -293,7 +329,8 @@ const originalTripData = {
                 {
                     "time": "15:05-15:20",
                     "location": "Tha Tien 碼頭（N8）→ 鄭王廟",
-                    "mapURL": "https://maps.app.goo.gl/H1A4nHjXxrt4GdP78",
+                    "mapURL": "",
+                    "noteURL": "",
                     "transport": "渡輪",
                     "cost": "5",
                     "notes": "每10分鐘一班船"
@@ -302,9 +339,10 @@ const originalTripData = {
                     "time": "15:30-16:20",
                     "location": "ใสสะอาด ก๋วยเตี๋ยวลูกชิ้นน้ำใส สาขาอรุณอมรินทร์ 用餐",
                     "mapURL": "https://maps.app.goo.gl/UqDggDHZAXKzNDut6",
+                    "noteURL": "",
                     "transport": "步行",
                     "cost": "0",
-                    "notes": "步行前往"
+                    "notes": "เส้นเล็ก แห้ง เนื้อ เปื่อย พิเศษ ฿90\nเส้นเล็ก น้ำ เนื้อ เปื่อย พิเศษ ฿90\nเส้นหมี่ต้มยำหมู เผ็ดน้อย พิเศษ ฿60\nลูกชิ้นปิ้งไม้ละ หมู ฿15 3 ชิ้น；เนื้อ ฿16 3 ชิ้น"
                 },
                 {
                     "time": "16:30-18:00",
@@ -317,34 +355,38 @@ const originalTripData = {
                 {
                     "time": "18:00-18:10",
                     "location": "藍船 → ICONSIAM",
-                    "mapURL": "https://maps.app.goo.gl/gfMXf4mbkZkLoiEj8",
+                    "mapURL": "https://maps.app.goo.gl/EyBxBW3Jdy9nET7o8",
+                    "noteURL": "",
                     "transport": "船",
                     "cost": "40",
-                    "notes": "船票 40 泰銖；或搭 18:40 班次；記得坐左邊"
+                    "notes": "或搭 18:40 班次；記得坐右邊"
                 },
                 {
                     "time": "18:10-20:30",
                     "location": "ICONSIAM 逛街",
-                    "mapURL": "",
+                    "mapURL": "https://maps.app.goo.gl/pzWwXe4nZRKu81Un7",
+                    "noteURL": "",
                     "transport": "無",
                     "cost": "0",
-                    "notes": "抵達後先去換匯；有免費廁所"
+                    "notes": "河畔聲光水舞表演 19、20、21點\nG、UG樓 - 室內水上市場、 Lung Ngen Coffee(泰奶60)、Karun(泰奶冰沙110 糖40%)、ChaTraMue、小蜜蜂泰式脆皮可麗餅3個60\n2樓 - 暹羅天地公園(Apple門市外)、The Selected\n3樓 - Loft(帆布包)\n4樓 - ICONCRAFT\n5樓 - ECOTOPIA(buffollow)\n6樓 - 沉浸式體驗(BLOOM in Four Seasons)\n7樓 - 瀑布水舞、觀景台"
                 },
                 {
                     "time": "20:30-20:40",
                     "location": "接駁船 → Sathorn碼頭",
-                    "mapURL": "https://maps.app.goo.gl/YZsLBZR213QeEjSh9",
+                    "mapURL": "https://maps.app.goo.gl/sz2fjTrVhZEFtzi97",
+                    "noteURL": "",
                     "transport": "船",
                     "cost": "0",
-                    "notes": "GF 2號門上船"
+                    "notes": "GF 2號門；1號碼頭"
                 },
                 {
                     "time": "20:40",
-                    "location": "BTS 回飯店",
+                    "location": "BTS回飯店",
                     "mapURL": "https://maps.app.goo.gl/fwtscEvcs2djsxit8",
+                    "noteURL": "",
                     "transport": "BTS",
                     "cost": "51",
-                    "notes": "BTS Saphan Taksin(S6) → National Stadium(W1)；走水溝巷子回飯店"
+                    "notes": "BTS Saphan Taksin(S6) → National Stadium(W1)；1號出口；走水溝巷子"
                 }
             ]
         },
@@ -366,33 +408,37 @@ const originalTripData = {
                     "time": "10:45-11:40",
                     "location": "Prasat Nakhon Luang",
                     "mapURL": "https://maps.app.goo.gl/T4XBoZhYw8G6umrt9",
-                    "transport": "包車",
-                    "cost": "20",
-                    "notes": "門票 20 泰銖"
-                },
-                {
-                    "time": "12:00-13:00",
-                    "location": "Kung Phuean Praew 午餐",
-                    "mapURL": "https://maps.app.goo.gl/Steo4JcNdiS2rkzp9",
-                    "transport": "包車",
-                    "cost": "0",
-                    "notes": "午餐地點"
-                },
-                {
-                    "time": "13:15-14:10",
-                    "location": "崖差蒙空寺",
-                    "mapURL": "https://maps.app.goo.gl/wBedJu1YvJfGAw7M6",
+                    "noteURL": "",
                     "transport": "包車",
                     "cost": "0",
                     "notes": ""
                 },
                 {
-                    "time": "14:20-14:40",
-                    "location": "三寶公寺",
+                    "time": "12:00-13:00",
+                    "location": "Kung Phuean Praew 午餐",
+                    "mapURL": "https://maps.app.goo.gl/Steo4JcNdiS2rkzp9",
+                    "noteURL": "",
                     "transport": "包車",
                     "cost": "0",
-                    "notes": "",
-                    "mapURL": "https://maps.app.goo.gl/H1K7X9H25F57gQ7M9"
+                    "notes": "Grilled Prawn (กุ้งเผา ฿380 1กก.+ ฿450 1กก.)\nFried Rice with Crabmeat (ข้าวผัดปู 95฿)"
+                },
+                {
+                    "time": "13:15-14:10",
+                    "location": "崖差蒙空寺",
+                    "mapURL": "https://maps.app.goo.gl/wBedJu1YvJfGAw7M6",
+                    "noteURL": "",
+                    "transport": "包車",
+                    "cost": "20",
+                    "notes": "門票 20 泰銖"
+                },
+                {
+                    "time": "14:20-14:40",
+                    "location": "三寶公寺",
+                    "mapURL": "https://maps.app.goo.gl/vH7gbj5w3tQVz4aR6",
+                    "noteURL": "",
+                    "transport": "包車",
+                    "cost": "0",
+                    "notes": ""
                 },
                 {
                     "time": "14:55-15:40",
@@ -406,14 +452,16 @@ const originalTripData = {
                     "time": "15:50-16:05",
                     "location": "Roti Sai Mai Abeedeen-Pranom Sangaroon 糖絲卷餅",
                     "mapURL": "https://maps.app.goo.gl/Q8vzJbu4oypvtsNt9",
+                    "noteURL": "",
                     "transport": "包車",
                     "cost": "0",
-                    "notes": "大城特色甜點"
+                    "notes": "斑斕1kg(ใบเตย 1กก.) ฿100"
                 },
                 {
                     "time": "16:10-16:50",
                     "location": "Pa Lek Boat Noodle 晚餐",
                     "mapURL": "https://maps.app.goo.gl/gPtuwsvJEyiR9mo2A",
+                    "noteURL": "",
                     "transport": "包車",
                     "cost": "0",
                     "notes": "晚餐地點"
