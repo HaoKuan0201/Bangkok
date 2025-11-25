@@ -30,8 +30,8 @@ body[data-theme="dark"] {
     --accent-color: #f2ca27;   /* 強調色（金黃） */
     --bg-color: #1a2124;       /* 整體背景 */
     --card-bg: #262a2b;        /* 卡片背景 */
-    --text-main: #9c9386;      /* 主要文字 */
-    --text-light: #9c9386;     /* 淡文字 */
+    --text-main: #d1dde6;      /* 主要文字 */
+    --text-light: #ffffff;     /* 淡文字 */
     --header-bg: #2C3E50;
 
     --trans-walk: #219251;
@@ -473,6 +473,7 @@ body[data-theme="dark"] .toggle-notes-btn:hover {
     background-color: var(--card-bg); 
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    color: var(--text-main);
 }
 
 /* Dark Mode adjustment for floor section */
@@ -486,7 +487,6 @@ body[data-theme="dark"] .floor-section {
 .floor-title {
     font-size: 1.1em;
     font-weight: bold;
-    color: var(--text-main); 
     margin-top: 0;
     margin-bottom: 8px;
     padding-bottom: 5px;
