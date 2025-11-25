@@ -518,7 +518,6 @@ body[data-theme="dark"] .floor-title {
 .price-info {
     font-weight: 700;
     color: var(--danger); 
-    background-color: #ffe8e8; 
     padding: 1px 4px;
     border-radius: 3px;
     white-space: nowrap;
@@ -528,7 +527,14 @@ body[data-theme="dark"] .floor-title {
 /* Dark Mode adjustment for price info */
 body[data-theme="dark"] .price-info {
     color: #ffd700; 
-    background-color: #4a2d00; 
+}
+
+.highlight-parentheses {
+    color: #0040ff;
+}
+
+body[data-theme="dark"] .highlight-parentheses {
+    color: #33C4FF; 
 }
 
 /* 雜項內容 */
