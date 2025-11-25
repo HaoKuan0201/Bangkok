@@ -603,7 +603,7 @@ ${notesHTML}
         if (separatorIndex !== -1 && (separatorIndex > 0 || separatorIndex < line.length - 1)) {
             // 匹配成功：這是一行 "Title - Content" 結構的內容
 
-            const floorTitle = line.substring(0, separatorIndex).trim();
+            const floorTitle = applyHighlighting(line.substring(0, separatorIndex).trim());
             const content = line.substring(separatorIndex + 1).trim();
 
             // 開始新的列表項，並使用 <h3> 作為樓層標題
