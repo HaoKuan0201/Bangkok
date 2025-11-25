@@ -746,31 +746,25 @@ ${notesHTML}
             renderDay(dayIndex);
         };
 
-        // 主題切換（預設深色）
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const themeIcon = document.getElementById('theme-icon');
+        // ===== 主題切換（已修正 null 問題）=====
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
 
-    // 讀取上次選擇，沒有的話預設 deep dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
 
-    themeToggleBtn.addEventListener('click', () => {
-        const current = document.body.getAttribute('data-theme');
-        const newTheme = current === 'dark' ? 'light' : 'dark';
-        
-        document.body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
+        themeToggleBtn.addEventListener('click', () => {
+            const current = document.body.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
 
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            // 月亮 = 深色
-            themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
-        } else {
-            // 太陽 = 淺色
-            themeIcon.innerHTML = `
+        function updateThemeIcon(theme) {
+            const menuIcon = document.getElementById('theme-icon-menu');
+            const moonSVG = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+            const sunSVG = `
                 <circle cx="12" cy="12" r="5"/>
                 <line x1="12" y1="1" x2="12" y2="3"/>
                 <line x1="12" y1="21" x2="12" y2="23"/>
@@ -781,8 +775,8 @@ ${notesHTML}
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
             `;
+            if (menuIcon) menuIcon.innerHTML = (theme === 'dark' ? moonSVG : sunSVG);
         }
-    }
 
         // === 日期導航欄 滾動向上自動隱藏（超順滑）===
     let lastScrollY = window.scrollY;
