@@ -99,7 +99,7 @@ async function saveTripData(newTripJson) {
     console.log(`嘗試將資料儲存到 Supabase (Title: ${newTripJson.title})...`);
     
     // 確保只儲存必要的欄位，並使用 targetTitle 進行衝突檢查
-    const dataToUpsert = {
+    const dataToUpdate = {
         title: newTripJson.title,
         // 假設 start_date/end_date 可以從 days[0] 和 days[last] 取得，
         // 這裡為簡化，先使用預設值或從 newTripJson 結構中提取。
@@ -109,7 +109,7 @@ async function saveTripData(newTripJson) {
         json_data: newTripJson, // 儲存整個行程物件
     };
 
-console.log(dataToUpsert);
+console.log(dataToUpdate);
     
     const { data, error } = await supabaseClient
         .from(TARGET_TABLE)
