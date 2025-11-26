@@ -123,9 +123,18 @@ console.log(dataToUpsert);
         return false;
     }
 
-    console.log('✅ 資料已成功儲存/更新至 Supabase。舊資料已自動備份到 Log 表。');
-    showToast('💾 行程已成功儲存到雲端！');
-    return true;
+    if (data && data.length > 0) {
+        const updatedTime = data[0].updated_at ? new Date(data[0].updated_at).toLocaleTimeString() : '成功';
+        console.log(`✅ 資料已成功更新至 Supabase。更新了 ${data.length} 行。`);
+        showToast(`💾 行程已成功儲存到雲端！最後修改於 ${updatedTime}`);
+        return true;
+    } else {
+        // 如果沒有錯誤但 data 為空，表示沒有找到匹配的 title
+        console.warn(`⚠️ 儲存未更新：Title (${currentTitle}) 不匹配任何現有行。`);
+        showToast('⚠️ 雲端更新未變動：請檢查行程標題是否正確存在。');
+        // 如果您確定該行必須存在，這表示前端的 title 與資料庫中的不匹配。
+        return false;
+    }
 }
 
 // 頁面載入後執行
