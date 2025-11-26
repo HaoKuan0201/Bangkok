@@ -941,7 +941,7 @@
         console.log('嘗試從 Supabase 讀取資料...');
 
         const { data, error } = await supabaseClient
-            .from('trips') // 選擇您建立的 trips 表格
+            .from('T_Travel_Trips') // 選擇您建立的 trips 表格
             .select('json_data') // 只選擇儲存行程 JSON 的欄位
             .limit(1); // 因為您只插入了一筆行程資料，所以只取第一筆
 
