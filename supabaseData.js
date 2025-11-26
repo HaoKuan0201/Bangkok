@@ -97,7 +97,7 @@ async function saveTripData(newTripJson) {
     }
 
     console.log(`嘗試將資料儲存到 Supabase (Title: ${newTripJson.title})...`);
-    
+    const currentTitle = newTripJson.title;
     // 確保只儲存必要的欄位，並使用 targetTitle 進行衝突檢查
     const dataToUpdate = {
         title: newTripJson.title,
