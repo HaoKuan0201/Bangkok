@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>曼谷五日自由行</title>
     <link rel="stylesheet" href="style.css">
-    <script src="originalTripData.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabaseData.js"></script>
 </head>
 <body>
 
@@ -171,20 +171,39 @@
 <script>
 
     // --- 數據與狀態管理 ---
-    const STORAGE_KEY = 'bangkokTripData';
+    // 這些常數需要與 supabaseData.js 中隱含使用的名稱保持一致
+    const STORAGE_KEY = 'bangkokTripData'; 
     const CHECK_KEY_SUFFIX = '_done';
     const COST_KEY_SUFFIX = '_cost';
 
     let appData = {};
     let currentDayIndex = 0;
     let isEditMode = false;
-    // 修正 Bug 2: 限制滑動偵測範圍
-    let isSwiping = false; // 新增標誌，避免多重滑動觸發
+    let isSwiping = false; 
     let mouseStartX = 0;
     let touchStartX = 0;
     let touchEndX = 0;
     const minSwipeDistance = 50;
+    
+    // --- 輔助函式 (必須在被呼叫前定義) ---
+    function showToast(message) { 
+        const toast = document.getElementById('toast-notification');
+        toast.textContent = message;
+        toast.classList.add('visible');
+        toast.style.pointerEvents = 'auto'; 
+        
+        clearTimeout(window.toastTimeout);
+        window.toastTimeout = setTimeout(() => {
+            toast.classList.remove('visible');
+            setTimeout(() => {
+                toast.style.pointerEvents = 'none';
+            }, 300); 
+        }, 3000);
+    }
+    // ----------------------------------------
 
+
+    // 修正: 移除對 originalTripData 的依賴
     function loadData() {
         const storedData = localStorage.getItem(STORAGE_KEY);
         if (storedData) {
@@ -194,18 +213,23 @@
                     return parsedData;
                 }
             } catch (e) {
-                console.error("Error parsing stored data, falling back to original data.", e);
+                console.error("Error parsing stored data, falling back to empty structure.", e);
             }
         }
-        return originalTripData;
+        // 如果本地沒有有效資料，返回空結構，等待 fetchTripData 載入。
+        return { 
+            title: '曼谷五日自由行', // 確保有 title
+            days: [] 
+        };
     }
 
     function saveData() {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
         const currentTripData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-        if (currentTripData) {
-            window.saveRemoteData(currentTripData);
+        if (currentTripData && window.saveRemoteData) {
+            // 呼叫 supabaseData.js 暴露出來的遠端儲存函式
+            window.saveRemoteData(currentTripData); 
         } else {
             showToast('⚠️ 本地無資料可儲存！');
         }
@@ -235,13 +259,24 @@
     // --- 初始化與事件監聽 ---
     document.addEventListener('DOMContentLoaded', () => {
         appData = loadData();
-        initApp();
+        
+        // 修正: 檢查是否有行程天數。如果沒有，則主動從雲端載入。
+        if (!appData.days || appData.days.length === 0) {
+             console.log("本地無資料，嘗試從雲端載入。");
+             if (window.loadRemoteData) {
+                 window.loadRemoteData();
+             } else {
+                 showToast('❌ 錯誤：supabaseData.js 尚未載入！');
+             }
+        } else {
+            initApp();
+        }
+        
         document.getElementById('event-form').addEventListener('submit', handleSaveEvent);
         
         document.addEventListener('click', (e) => {
             const menu = document.getElementById('more-menu-dropdown');
             const btn = document.getElementById('more-menu-btn');
-            // 修正 Bug 1 相關：確保點擊菜單內部按鈕後，菜單也能關閉 (openQRModal 會負責關閉)
             if (!menu.contains(e.target) && !btn.contains(e.target)) {
                 menu.classList.remove('show');
             }
@@ -288,6 +323,8 @@
         renderNavigation();
         renderDay(currentDayIndex);
         updateEditButtonUI();
+        // 更新標題以反映行程名稱
+        document.querySelector('.header-titles h1').textContent = appData.title || '行程規劃';
     }
     
     function initTheme() {
@@ -303,13 +340,8 @@
         swipeContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
         swipeContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
 
-        // 修正 Bug 2: 將 mouse events 監聽限制在 #swipe-container 內
         swipeContainer.addEventListener('mousedown', handleMouseStart);
         swipeContainer.addEventListener('mouseup', handleMouseSwipe);
-
-        // 移除對 document.body 的 mouseup/mousedown 監聽
-        // document.body.addEventListener('mousedown', (e) => { mouseStartX = e.screenX; });
-        // document.body.addEventListener('mouseup', handleMouseSwipe);
     }
     
     function initScrollListener() {
@@ -332,25 +364,7 @@
     }
 
     // --- UI/渲染邏輯 ---
-    function showToast(message) {
-        const toast = document.getElementById('toast-notification');
-        toast.textContent = message;
-        toast.classList.add('visible');
-        // 確保 Toast 顯示時可以接收 pointer event (雖然通常是為了防止點擊穿透)
-        toast.style.pointerEvents = 'auto'; 
-        
-        clearTimeout(window.toastTimeout);
-        window.toastTimeout = setTimeout(() => {
-            toast.classList.remove('visible');
-            
-            // 【⭐ 關鍵修正 ⭐】
-            // 延遲一點點時間（配合 CSS transition 0.3s），確保 Toast 完全隱藏後才禁用點擊事件
-            setTimeout(() => {
-                toast.style.pointerEvents = 'none';
-            }, 300); 
-
-        }, 3000);
-    }
+    // (showToast 移至上方)
 
     function determineInitialDay() {
         const today = new Date();
@@ -358,6 +372,12 @@
         const month = String(today.getMonth() + 1).padStart(2, '0');
         const day = String(today.getDate()).padStart(2, '0');
         const todayStr = `${year}-${month}-${day}`;
+        
+        // 修正: 避免 appData.days 未定義
+        if (!appData.days || appData.days.length === 0) {
+             currentDayIndex = 0;
+             return;
+        }
 
         const foundIndex = appData.days.findIndex(d => d.fullDate === todayStr);
         
@@ -371,6 +391,8 @@
     function renderNavigation() {
         const navContainer = document.getElementById('nav-container');
         navContainer.innerHTML = '';
+        
+        if (!appData.days || appData.days.length === 0) return;
 
         const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
 
@@ -410,6 +432,12 @@
     
     function renderDay(dayIndex) {
         const container = document.getElementById('schedule-container');
+        // 修正: 如果沒有資料，直接返回
+        if (!appData.days || appData.days.length === 0) {
+            container.innerHTML = `<h2 style="text-align:center; padding: 50px;">載入中... 或資料為空</h2>`;
+            return;
+        }
+        
         const dayData = appData.days[dayIndex];
         
         container.innerHTML = '';
@@ -609,7 +637,7 @@
 
         sortEventsByTime(appData.days[dayIndex].events);
 
-        saveData();
+        saveData(); // 呼叫 saveData，它會同步到雲端
         closeEditModal();
         renderDay(dayIndex);
     }
@@ -629,26 +657,18 @@
     
     window.handleReloadServerData = function() {
         const userConfirmed = confirm(
-            "⚠️ 這會把你目前在 localStorage 裡的所有自訂行程、記帳、完成狀態全部覆蓋，恢復成最一開始的原始行程！\n\n確定要繼續嗎？"
+            "⚠️ 這會把你目前在 Local Storage 裡的所有自訂行程、記帳、完成狀態全部覆蓋，恢復成儲存在 Supabase 雲端上的最新版本！\n\n確定要繼續嗎？"
         );
 
         if (!userConfirmed) return;
 
-        appData = JSON.parse(JSON.stringify(originalTripData));
-
-        localStorage.removeItem(STORAGE_KEY);
-
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key && (key.startsWith('trip_') || key.startsWith('bangkokTripData'))) {
-                localStorage.removeItem(key);
-            }
+        // 修正: 呼叫遠端載入函式，讓它處理數據覆蓋和頁面刷新。
+        if (window.loadRemoteData) {
+            showToast('🔄 正在從雲端下載最新行程...');
+            window.loadRemoteData();
+        } else {
+             showToast('❌ 錯誤：無法找到雲端資料載入函式。');
         }
-
-        saveData();
-
-        showToast('✅ 已成功從伺服器重新載入原始行程！');
-        setTimeout(() => location.reload(), 1200);
     }
 
     // --- 滑動邏輯 ---
@@ -665,7 +685,6 @@
     }
     
     function handleMouseStart(e) {
-        // 確保只有滑鼠左鍵點擊才開始偵測
         if (e.button !== 0) return; 
         mouseStartX = e.screenX;
         isSwiping = true;
@@ -676,7 +695,6 @@
 
         if (Math.abs(swipeDistance) < minSwipeDistance) return;
 
-        // 避免重複執行
         if (Date.now() - (window.lastSwipeTime || 0) < 300) return; 
         window.lastSwipeTime = Date.now();
 
@@ -704,7 +722,7 @@
         isSwiping = false;
 
         const diff = mouseStartX - e.screenX;
-        if (Math.abs(diff) > 80) { // 增加閾值，確保是故意的滑動
+        if (Math.abs(diff) > 80) { 
             handleSwipe(mouseStartX, e.screenX);
         }
     }
@@ -840,10 +858,11 @@
 
     // --- Modal 與特殊功能 ---
     window.copyAppDataToClipboard = function() {
+        // 修正: 複製的內容現在是 appData 的內容，不再是 originalTripData 的定義。
         const dataToCopy = JSON.stringify(appData, null, 4); 
         
         const textarea = document.createElement('textarea');
-        textarea.value = 'const originalTripData = ' + dataToCopy + ';';
+        textarea.value = dataToCopy;
         textarea.style.position = 'fixed';
         textarea.style.left = '-9999px';
         document.body.appendChild(textarea);
@@ -913,12 +932,10 @@
     }
 
     window.openQRModal = function() {
-        // 修正 Bug 1: 點擊後確保菜單關閉
         document.getElementById('more-menu-dropdown').classList.remove('show');
         document.getElementById('qr-modal').classList.add('visible');
         
         const btns = document.querySelectorAll('.qr-person-btn');
-        // 確保點擊 '我' 按鈕以載入初始 QR 碼 (避免首次開啟時圖片錯誤)
         btns.forEach(b => b.textContent === '我' ? b.click() : null); 
     }
 
