@@ -171,6 +171,13 @@ body {
     box-shadow: 0 2px 4px rgba(44, 62, 80, 0.2);
 }
 
+#swipe-container {
+    overflow: hidden;           /* 禁止上下彈性滾動 */
+    height: 100%;
+    touch-action: pan-y;        /* 允許上下滾動，禁止左右被系統攔截 */
+    -webkit-overflow-scrolling: touch;
+}
+
 /* Timeline & Cards */
 .schedule-container {
     padding: 20px 15px;
