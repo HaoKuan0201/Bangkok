@@ -19,7 +19,7 @@
             <div class="header-controls">
 
                 <div class="more-menu-container">
-                    <button id="more-menu-btn" class="icon-btn" onclick="toggleMoreMenu()" title="更多功能">
+                    <button id="more-menu-btn" class="icon-btn" onclick="toggleMoreMenu()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="1"></circle>
                             <circle cx="19" cy="12" r="1"></circle>
@@ -29,7 +29,7 @@
 
                     <div id="more-menu-dropdown" class="more-menu-dropdown">
                         
-                        <button class="icon-btn" onclick="openQRModal()" title="TDAC QR Code">
+                        <button class="icon-btn" onclick="openQRModal()">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="3" y="3" width="7" height="7"></rect>
                                 <rect x="14" y="3" width="7" height="7"></rect>
@@ -39,7 +39,7 @@
                             TDAC QR
                         </button>
 
-                        <button id="reload-server-data-btn" class="icon-btn reload-server-btn" title="讀取伺服器資料">
+                        <button id="reload-server-data-btn" class="icon-btn reload-server-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M23 4v6h-6"></path>
                                 <path d="M1 20v-6h6"></path>
@@ -49,14 +49,14 @@
                             重置資料
                         </button>
                         
-                        <button id="theme-toggle-btn" class="icon-btn theme-toggle-btn" title="切換深色/淺色主題">
+                        <button id="theme-toggle-btn" class="icon-btn theme-toggle-btn">
                             <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                             </svg>
                             切換主題
                         </button>
 
-                        <button id="copy-data-btn" class="icon-btn copy-btn" onclick="copyAppDataToClipboard()" title="複製所有數據">
+                        <button id="copy-data-btn" class="icon-btn copy-btn" onclick="copyAppDataToClipboard()">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
                                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
@@ -67,10 +67,9 @@
                 </div>
                 
                 <a href="https://www.google.com/maps/d/u/0/edit?mid=1pJlG73WanZkVkTSFvt3GLpMCDVU8heQ&ll=13.798196927110428%2C100.54907266665649&z=17" 
-                   target="_blank" 
-                   id="map-bookmark-btn" 
-                   class="icon-btn map-bookmark-btn" 
-                   title="查看行程地圖書籤">
+                    target="_blank" 
+                    id="map-bookmark-btn" 
+                    class="icon-btn map-bookmark-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
                         <line x1="16" x2="16" y1="2" y2="22"/>
@@ -78,7 +77,7 @@
                     </svg>
                 </a>
                 
-                <button id="edit-toggle-btn" class="icon-btn edit-toggle-btn" onclick="toggleEditMode()" title="切換編輯模式">
+                <button id="edit-toggle-btn" class="icon-btn edit-toggle-btn" onclick="toggleEditMode()">
                     <svg id="edit-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
                     </svg>
@@ -91,12 +90,12 @@
 
     <nav class="day-nav">
         <div class="nav-container" id="nav-container">
-            </div>
+        </div>
     </nav>
 
     <div id="swipe-container">
-    <main id="schedule-container" class="schedule-container"></main>
-</div>
+        <main id="schedule-container" class="schedule-container"></main>
+    </div>
     
     <div id="edit-modal" class="edit-modal">
         <div class="modal-content">
@@ -148,7 +147,8 @@
         </div>
     </div>
 
-    <div id="qr-modal" class="edit-modal"> <div class="modal-content qr-modal-content">
+    <div id="qr-modal" class="edit-modal">
+        <div class="modal-content qr-modal-content">
             <h3>TDAC QR Code</h3>
             
             <div class="qr-btn-group">
@@ -158,7 +158,7 @@
             </div>
 
             <div class="qr-image-container">
-                <img id="qr-image-display" src="tdac_我.png" alt="TDAC QR Code" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2NjYyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjMiIHk9IjMiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgcng9IjIiIHJ5PSIyIi8+PHBhdGggZD0iTTEyIDh2OCIvPjxwYXRoIGQ9Ik04IDEybDggMCIvPjwvc3ZnPg==';this.title='圖片未找到'">
+                <img id="qr-image-display" src="tdac_我.png" alt="" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2NjYyIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjMiIHk9IjMiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgcng9IjIiIHJ5PSIyIi8+PHBhdGggZD0iTTEyIDh2OCIvPjxwYXRoIGQ9Ik04IDEybDggMCIvPjwvc3ZnPg=='">
             </div>
 
             <div class="button-group" style="justify-content: center;">
@@ -167,126 +167,188 @@
         </div>
     </div>
 
-    <script>
-        // --- 全局變量和數據處理 ---
-        const STORAGE_KEY = 'bangkokTripData';
-        const CHECK_KEY_SUFFIX = '_done';
-        const COST_KEY_SUFFIX = '_cost';
+<script>
 
-        let appData = {};
-        let currentDayIndex = 0;
-        let isEditMode = false;
+    // --- 數據與狀態管理 ---
+    const STORAGE_KEY = 'bangkokTripData';
+    const CHECK_KEY_SUFFIX = '_done';
+    const COST_KEY_SUFFIX = '_cost';
 
-        // --- 初始化應用程式 ---
-        document.addEventListener('DOMContentLoaded', () => {
-            appData = loadData();
-            initApp();
-            document.getElementById('event-form').addEventListener('submit', handleSaveEvent);
-            
-            // 點擊頁面其他地方關閉更多選單
-            document.addEventListener('click', (e) => {
-                const menu = document.getElementById('more-menu-dropdown');
-                const btn = document.getElementById('more-menu-btn');
-                if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                    menu.classList.remove('show');
+    let appData = {};
+    let currentDayIndex = 0;
+    let isEditMode = false;
+    let mouseStartX = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
+    function loadData() {
+        const storedData = localStorage.getItem(STORAGE_KEY);
+        if (storedData) {
+            try {
+                const parsedData = JSON.parse(storedData);
+                if (parsedData.days && parsedData.days.length > 0) {
+                    return parsedData;
                 }
-            });
+            } catch (e) {
+                console.error("Error parsing stored data, falling back to original data.", e);
+            }
+        }
+        return originalTripData;
+    }
+
+    function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
+    }
+
+    function getSortableTime(timeStr) {
+        if (!timeStr || typeof timeStr !== 'string') return '99:99'; 
+        const parts = timeStr.split('-');
+        return parts[0].trim();
+    }
+
+    function sortEventsByTime(events) {
+        events.sort((a, b) => {
+            const timeA = getSortableTime(a.time);
+            const timeB = getSortableTime(b.time);
+
+            if (timeA < timeB) {
+                return -1;
+            }
+            if (timeA > timeB) {
+                return 1;
+            }
+            return 0;
+        });
+    }
+
+    // --- 初始化與事件監聽 ---
+    document.addEventListener('DOMContentLoaded', () => {
+        appData = loadData();
+        initApp();
+        document.getElementById('event-form').addEventListener('submit', handleSaveEvent);
+        
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('more-menu-dropdown');
+            const btn = document.getElementById('more-menu-btn');
+            if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.classList.remove('show');
+            }
         });
 
-        // --- 數據持久化 ---
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        if(themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const current = document.body.getAttribute('data-theme');
+                const newTheme = current === 'dark' ? 'light' : 'dark';
+                
+                document.body.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+                
+                document.getElementById('more-menu-dropdown').classList.remove('show');
+            });
+        }
+        
+        const reloadBtn = document.getElementById('reload-server-data-btn');
+        if(reloadBtn) {
+            reloadBtn.addEventListener('click', handleReloadServerData);
+        }
 
-        function loadData() {
-            const storedData = localStorage.getItem(STORAGE_KEY);
-            if (storedData) {
-                try {
-                    const parsedData = JSON.parse(storedData);
-                    if (parsedData.days && parsedData.days.length > 0) {
-                        return parsedData;
-                    }
-                } catch (e) {
-                    console.error("Error parsing stored data, falling back to original data.", e);
+        const dayNav = document.querySelector('.day-nav');
+        if(dayNav) {
+            dayNav.addEventListener('click', (e) => {
+                if (e.target === dayNav || e.target.closest('.nav-container')) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 }
-            }
-            return originalTripData;
-        }
-
-        function saveData() {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
+            });
         }
         
-        // --- 複製數據功能 (複製到剪貼簿) ---
-        window.copyAppDataToClipboard = function() {
-            // 確保 appData 是最新的
-            const dataToCopy = JSON.stringify(appData, null, 4); 
+        initSwipeListeners();
+        initScrollListener();
+        initTheme();
+    });
+
+    function initApp() {
+        determineInitialDay();
+        renderNavigation();
+        renderDay(currentDayIndex);
+        updateEditButtonUI();
+    }
+    
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+    }
+
+    function initSwipeListeners() {
+        const swipeContainer = document.getElementById('swipe-container');
+        if (!swipeContainer) return;
+        
+        swipeContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
+        swipeContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+        swipeContainer.addEventListener('mousedown', (e) => mouseStartX = e.screenX);
+        swipeContainer.addEventListener('mouseup', handleMouseSwipe);
+
+        document.body.addEventListener('mousedown', (e) => {
+            mouseStartX = e.screenX;
+        });
+        document.body.addEventListener('mouseup', handleMouseSwipe);
+    }
+    
+    function initScrollListener() {
+        let lastScrollY = window.scrollY;
+        const dayNav = document.querySelector('.day-nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
             
-            // 使用 execCommand('copy') 來複製到剪貼簿 (在 Canvas 環境中通常更可靠)
-            const textarea = document.createElement('textarea');
-            textarea.value = 'const originalTripData = ' + dataToCopy + ';';
-            textarea.style.position = 'fixed'; // 防止滾動
-            textarea.style.left = '-9999px'; // 移到螢幕外
-            document.body.appendChild(textarea);
-            
-            textarea.select();
-            
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    showToast('✅ 數據已成功複製到剪貼簿！');
-                } else {
-                    showToast('❌ 複製失敗，請手動複製。');
-                }
-            } catch (err) {
-                console.error('Copy command failed:', err);
-                showToast('❌ 複製失敗，請手動複製。');
+            if (currentScrollY > lastScrollY && currentScrollY > 150) {
+                dayNav.classList.remove('show');
+                dayNav.classList.add('hide');
+            } else if (currentScrollY < lastScrollY) {
+                dayNav.classList.remove('hide');
+                dayNav.classList.add('show');
             }
             
-            document.body.removeChild(textarea);
-            
-            // 複製完順便關閉選單
-            document.getElementById('more-menu-dropdown').classList.remove('show');
-        }
+            lastScrollY = currentScrollY;
+        });
+    }
+
+    // --- UI/渲染邏輯 ---
+    function showToast(message) {
+        const toast = document.getElementById('toast-notification');
+        toast.textContent = message;
+        toast.classList.add('visible');
         
-        // 顯示 Toast 通知
-        function showToast(message) {
-            const toast = document.getElementById('toast-notification');
-            toast.textContent = message;
-            toast.classList.add('visible');
-            
-            clearTimeout(window.toastTimeout);
-            window.toastTimeout = setTimeout(() => {
-                toast.classList.remove('visible');
-            }, 3000);
-        }
+        clearTimeout(window.toastTimeout);
+        window.toastTimeout = setTimeout(() => {
+            toast.classList.remove('visible');
+        }, 3000);
+    }
 
+    function determineInitialDay() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        const todayStr = `${year}-${month}-${day}`;
 
-        // --- 核心應用邏輯 ---
-
-        function initApp() {
-            determineInitialDay();
-            renderNavigation();
-            renderDay(currentDayIndex);
-            updateEditButtonUI();
-        }
+        const foundIndex = appData.days.findIndex(d => d.fullDate === todayStr);
         
-        // 1. 自動判斷當前日期
-        function determineInitialDay() {
-            const today = new Date();
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const day = String(today.getDate()).padStart(2, '0');
-            const todayStr = `${year}-${month}-${day}`;
-
-            const foundIndex = appData.days.findIndex(d => d.fullDate === todayStr);
-            
-            if (foundIndex !== -1) {
-                currentDayIndex = foundIndex;
-            } else {
-                currentDayIndex = 0; // 默認為第一天
-            }
+        if (foundIndex !== -1) {
+            currentDayIndex = foundIndex;
+        } else {
+            currentDayIndex = 0;
         }
+    }
 
-        // 2. 渲染導航欄
-        function renderNavigation() {
+    function renderNavigation() {
         const navContainer = document.getElementById('nav-container');
         navContainer.innerHTML = '';
 
@@ -296,7 +358,6 @@
             const btn = document.createElement('button');
             btn.className = `nav-btn ${index === currentDayIndex ? 'active' : ''}`;
 
-            // 從 fullDate (YYYY-MM-DD) 取得星期幾
             const dateObj = new Date(dayData.fullDate);
             const month = dateObj.getMonth() + 1;
             const date = dateObj.getDate();
@@ -315,23 +376,262 @@
         setTimeout(updateNavState, 100);
     }
 
-        function updateNavState() {
-            const btns = document.querySelectorAll('.nav-btn');
-            btns.forEach((btn, index) => {
-                if (index === currentDayIndex) {
-                    btn.classList.add('active');
-                    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
+    function updateNavState() {
+        const btns = document.querySelectorAll('.nav-btn');
+        btns.forEach((btn, index) => {
+            if (index === currentDayIndex) {
+                btn.classList.add('active');
+                btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+    
+    function renderDay(dayIndex) {
+        const container = document.getElementById('schedule-container');
+        const dayData = appData.days[dayIndex];
+        
+        container.innerHTML = '';
+
+        const themeHeader = document.createElement('div');
+        themeHeader.style.textAlign = 'center';
+        themeHeader.innerHTML = `<h2 class="day-theme">${dayData.theme}</h2>`;
+        container.appendChild(themeHeader);
+
+        const timeline = document.createElement('div');
+        timeline.className = 'timeline';
+
+        let dailyTotal = 0;
+
+        dayData.events.forEach((event, eventIndex) => {
+            const storageKeyPrefix = `trip_d${dayIndex}_e${eventIndex}`;
+            const isCompleted = localStorage.getItem(`${storageKeyPrefix}${CHECK_KEY_SUFFIX}`) === 'true';
+            const storedCost = localStorage.getItem(`${storageKeyPrefix}${COST_KEY_SUFFIX}`);
+            
+            const displayCost = storedCost !== null ? storedCost : '';
+            if (storedCost && !isNaN(parseInt(storedCost))) dailyTotal += parseInt(storedCost);
+
+            const card = document.createElement('div');
+            card.className = `event-card ${isCompleted ? 'completed' : ''}`;
+            card.id = `card-${dayIndex}-${eventIndex}`;
+
+            let transportIcon = '🚶';
+            let transportClass = 'trans-walk';
+            const t = event.transport ? event.transport.toLowerCase() : '';
+            
+            if (t.includes('bts') || t.includes('mrt')) {
+                transportIcon = '🚆';
+                transportClass = 'trans-bts';
+            } else if (t.includes('船') || t.includes('渡輪') || t.includes('ferry')) {
+                transportIcon = '⛴️';
+                transportClass = 'trans-boat';
+            } else if (t.includes('bolt') || t.includes('包車') || t.includes('公車') || t.includes('car')) {
+                transportIcon = '🚗';
+                transportClass = 'trans-car';
+            }
+            else if (t.includes('飛機')) {
+                transportIcon = '✈️';
+                transportClass = 'trans-bts';
+            }
+
+            const formattedNotes = formatNotes(event.notes);
+            
+            let headerContent = '';
+            if (isEditMode) {
+                headerContent = `
+                    <div class="edit-controls">
+                        <button onclick="startEditEvent(${dayIndex}, ${eventIndex})" class="edit-icon">
+                            ✏️
+                        </button>
+                        <button onclick="deleteEvent(${dayIndex}, ${eventIndex})" class="delete-icon">
+                            🗑️
+                        </button>
+                    </div>
+                `;
+            } 
+
+            const mapIconHTML = event.mapURL ? `
+                <a href="${event.mapURL}" target="_blank" class="map-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                </a>
+            ` : '';
+
+            const noteIconHTML = event.noteURL ? `
+                <a href="${event.noteURL}" target="_blank" class="note-icon">
+                    🚀
+                </a>
+            ` : '';
+
+            const notesHTML = event.notes ? `
+                <div class="notes-container" id="notes-container-${dayIndex}-${eventIndex}">
+                    <div class="event-notes collapsed" id="event-notes-${dayIndex}-${eventIndex}">
+                        ${formattedNotes}
+                    </div>
+                    <button class="toggle-notes-btn" onclick="toggleNotes(${dayIndex}, ${eventIndex}, this)">
+                        展開備註 🔽
+                    </button>
+                </div>
+            ` : '';
+            
+            card.innerHTML = `
+                <div class="event-header">
+                    <span class="event-time">${event.time}</span>
+                    ${headerContent}
+                </div>
+                
+                <div class="event-location-group">
+                    <div class="event-location">${event.location}</div>
+                    ${mapIconHTML}
+                    ${noteIconHTML}
+                </div>
+                
+                <div class="event-details">
+                    <span class="badge ${transportClass}">${transportIcon} ${event.transport}</span>
+                    <div class="cost-section" onclick="enableCostEdit(${dayIndex}, ${eventIndex}, this)">
+                        <span id="cost-display-${dayIndex}-${eventIndex}">
+                            ${storedCost ? `實支: ฿${storedCost}` : `預估: ฿${event.cost}`}
+                        </span>
+                    </div>
+                </div>
+                
+                ${notesHTML}
+            `;
+
+            timeline.appendChild(card);
+        });
+
+        container.appendChild(timeline);
+        
+        if (isEditMode) {
+            const addBtn = document.createElement('button');
+            addBtn.className = 'add-event-btn';
+            addBtn.textContent = '+ 新增行程';
+            addBtn.onclick = () => startAddEvent(dayIndex);
+            container.appendChild(addBtn);
         }
 
-        // 新增：手機左右滑動切換日期
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const minSwipeDistance = 50; // 最小滑動距離才觸發
+        const summary = document.createElement('div');
+        summary.className = 'daily-summary';
+        summary.innerHTML = `
+            <div class="total-label">本日實際總花費</div>
+            <div class="total-amount">฿${dailyTotal}</div>
+            <button class="reset-btn" onclick="resetDailyCosts(${dayIndex})">重置本日花費</button>
+        `;
+        container.appendChild(summary);
+    }
+    
+    function updateEditButtonUI() {
+        const btn = document.getElementById('edit-toggle-btn');
+        const iconElement = document.getElementById('edit-icon');
 
+        if (isEditMode) {
+            btn.classList.add('active');
+            btn.title = '結束編輯模式';
+            iconElement.innerHTML = `<path d="M5 12l5 5l8-8"/>`;
+        } else {
+            btn.classList.remove('active');
+            btn.title = '切換編輯模式';
+            iconElement.innerHTML = `<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>`;
+        }
+    }
+    
+    function updateThemeIcon(theme) {
+        const themeIcon = document.getElementById('theme-icon');
+        if (theme === 'dark') {
+            themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+        } else {
+            themeIcon.innerHTML = `
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            `;
+        }
+    }
+
+    // --- 編輯與操作邏輯 ---
+    
+    window.toggleEditMode = function() {
+        isEditMode = !isEditMode;
+        updateEditButtonUI();
+        renderDay(currentDayIndex);
+    }
+
+    function handleSaveEvent(e) {
+        e.preventDefault();
+        
+        const dayIndex = parseInt(document.getElementById('event-day-index').value);
+        const eventIndex = parseInt(document.getElementById('event-index').value);
+
+        const newEvent = {
+            time: document.getElementById('event-time-input').value,
+            location: document.getElementById('event-location-input').value,
+            mapURL: document.getElementById('event-map-url-input').value.trim(),
+            noteURL: document.getElementById('event-note-url-input').value.trim(),
+            transport: document.getElementById('event-transport-input').value,
+            cost: document.getElementById('event-estimated-cost-input').value || '0',
+            notes: document.getElementById('event-notes-input').value
+        };
+
+        if (eventIndex === -1) {
+            appData.days[dayIndex].events.push(newEvent);
+        } else {
+            appData.days[dayIndex].events[eventIndex] = newEvent;
+        }
+
+        sortEventsByTime(appData.days[dayIndex].events);
+
+        saveData();
+        closeEditModal();
+        renderDay(dayIndex);
+    }
+
+    window.deleteEvent = function(dayIndex, eventIndex) {
+        if(!confirm("確定要刪除此行程嗎？")) return;
+
+        appData.days[dayIndex].events.splice(eventIndex, 1);
+        saveData();
+        
+        localStorage.removeItem(`trip_d${dayIndex}_e${eventIndex}${CHECK_KEY_SUFFIX}`);
+        localStorage.removeItem(`trip_d${dayIndex}_e${eventIndex}${COST_KEY_SUFFIX}`);
+        
+        sortEventsByTime(appData.days[dayIndex].events);
+        renderDay(dayIndex);
+    }
+    
+    window.handleReloadServerData = function() {
+        const userConfirmed = confirm(
+            "⚠️ 這會把你目前在 localStorage 裡的所有自訂行程、記帳、完成狀態全部覆蓋，恢復成最一開始的原始行程！\n\n確定要繼續嗎？"
+        );
+
+        if (!userConfirmed) return;
+
+        appData = JSON.parse(JSON.stringify(originalTripData));
+
+        localStorage.removeItem(STORAGE_KEY);
+
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && (key.startsWith('trip_') || key.startsWith('bangkokTripData'))) {
+                localStorage.removeItem(key);
+            }
+        }
+
+        saveData();
+
+        showToast('✅ 已成功從伺服器重新載入原始行程！');
+        setTimeout(() => location.reload(), 1200);
+    }
+
+    // --- 滑動邏輯 ---
     function handleTouchStart(e) {
         touchStartX = e.changedTouches[0].screenX;
     }
@@ -347,655 +647,257 @@
         if (Math.abs(swipeDistance) < minSwipeDistance) return;
 
         if (swipeDistance > 0) {
-            // 往左滑 → 下一天
             if (currentDayIndex < appData.days.length - 1) {
                 currentDayIndex++;
             }
         } else {
-            // 往右滑 → 前一天
             if (currentDayIndex > 0) {
                 currentDayIndex--;
             }
         }
 
-        // 更新畫面
         updateNavState();
         renderDay(currentDayIndex);
 
         window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
-    // 改綁到專門的滑動容器，完美解決「整個畫面被拖」的問題
-const swipeContainer = document.getElementById('swipe-container');
-
-swipeContainer.addEventListener('touchstart', handleTouchStart, { passive: true });
-swipeContainer.addEventListener('touchend', handleTouchEnd, { passive: true });
-
-// 可選：也支援滑鼠拖曳測試（電腦用）
-swipeContainer.addEventListener('mousedown', (e) => mouseStartX = e.screenX);
-swipeContainer.addEventListener('mouseup', (e) => {
-    const diff = mouseStartX - e.screenX;
-    if (Math.abs(diff) > 80) {
-        if (diff > 0 && currentDayIndex < appData.days.length - 1) currentDayIndex++;
-        else if (diff < 0 && currentDayIndex > 0) currentDayIndex--;
-        updateNavState();
-        renderDay(currentDayIndex);
-    }
-});
-
-    // 可選：也支援滑鼠拖曳（在電腦上測試用）
-    let mouseStartX = 0;
-    document.body.addEventListener('mousedown', (e) => {
-        mouseStartX = e.screenX;
-    });
-    document.body.addEventListener('mouseup', (e) => {
+    function handleMouseSwipe(e) {
         const diff = mouseStartX - e.screenX;
         if (Math.abs(diff) > 80) {
-            if (diff > 0 && currentDayIndex < appData.days.length - 1) {
-                currentDayIndex++;
-            } else if (diff < 0 && currentDayIndex > 0) {
-                currentDayIndex--;
-            }
+            if (diff > 0 && currentDayIndex < appData.days.length - 1) currentDayIndex++;
+            else if (diff < 0 && currentDayIndex > 0) currentDayIndex--;
             updateNavState();
             renderDay(currentDayIndex);
         }
-    });
+    }
 
-    // ... 你原本剩下的所有程式碼繼續保持不變 ...
-
-        // 3. 渲染當日行程
-        function renderDay(dayIndex) {
-            const container = document.getElementById('schedule-container');
-            const dayData = appData.days[dayIndex];
-            
-            container.innerHTML = '';
-
-            const themeHeader = document.createElement('div');
-            themeHeader.style.textAlign = 'center';
-            themeHeader.innerHTML = `<h2 class="day-theme">${dayData.theme}</h2>`;
-            container.appendChild(themeHeader);
-
-            const timeline = document.createElement('div');
-            timeline.className = 'timeline';
-
-            let dailyTotal = 0;
-
-            dayData.events.forEach((event, eventIndex) => {
-                const storageKeyPrefix = `trip_d${dayIndex}_e${eventIndex}`;
-                const isCompleted = localStorage.getItem(`${storageKeyPrefix}${CHECK_KEY_SUFFIX}`) === 'true';
-                const storedCost = localStorage.getItem(`${storageKeyPrefix}${COST_KEY_SUFFIX}`);
-                
-                const displayCost = storedCost !== null ? storedCost : '';
-                // 檢查 storedCost 是否為有效數字，以累加到 dailyTotal
-                if (storedCost && !isNaN(parseInt(storedCost))) dailyTotal += parseInt(storedCost);
-
-                const card = document.createElement('div');
-                card.className = `event-card ${isCompleted ? 'completed' : ''}`;
-                card.id = `card-${dayIndex}-${eventIndex}`;
-
-                let transportIcon = '🚶';
-                let transportClass = 'trans-walk';
-                const t = event.transport ? event.transport.toLowerCase() : '';
-                
-                if (t.includes('bts') || t.includes('mrt')) {
-                    transportIcon = '🚆';
-                    transportClass = 'trans-bts';
-                } else if (t.includes('船') || t.includes('渡輪') || t.includes('ferry')) {
-                    transportIcon = '⛴️';
-                    transportClass = 'trans-boat';
-                } else if (t.includes('bolt') || t.includes('包車') || t.includes('公車') || t.includes('car')) {
-                    transportIcon = '🚗';
-                    transportClass = 'trans-car';
-                }
-                else if (t.includes('飛機')) {
-                    transportIcon = '✈️';
-                    transportClass = 'trans-bts';
-                }
-
-                const formattedNotes = formatNotes(event.notes);
-                
-                let headerContent = '';
-                if (isEditMode) {
-                    headerContent = `
-                        <div class="edit-controls">
-                            <button onclick="startEditEvent(${dayIndex}, ${eventIndex})" class="edit-icon" title="編輯行程">
-                                ✏️
-                            </button>
-                            <button onclick="deleteEvent(${dayIndex}, ${eventIndex})" class="delete-icon" title="刪除行程">
-                                🗑️
-                            </button>
-                        </div>
-                    `;
-                } 
-                // else {
-                //      headerContent = `
-                //          <label class="checkbox-wrapper">
-                //              <input type="checkbox" ${isCompleted ? 'checked' : ''} 
-                //                  onchange="toggleComplete(${dayIndex}, ${eventIndex}, this)">
-                //          </label>
-                //      `;
-                // }
-
-                // 地圖圖標和連結
-                const mapIconHTML = event.mapURL ? `
-                    <a href="${event.mapURL}" target="_blank" class="map-icon" title="查看地圖">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                    </a>
-                ` : '';
-
-                // 備註連結圖標和連結
-                const noteIconHTML = event.noteURL ? `
-                    <a href="${event.noteURL}" target="_blank" class="note-icon" title="查看備註連結">
-                        🚀
-                    </a>
-                ` : '';
-
-                // 備註收折功能結構
-                const notesHTML = event.notes ? `
-                    <div class="notes-container" id="notes-container-${dayIndex}-${eventIndex}">
-                        <div class="event-notes collapsed" id="event-notes-${dayIndex}-${eventIndex}">
-                            ${formattedNotes}
-                        </div>
-                        <button class="toggle-notes-btn" onclick="toggleNotes(${dayIndex}, ${eventIndex}, this)">
-                            展開備註 🔽
-                        </button>
-                    </div>
-                ` : '';
-                
-                card.innerHTML = `
-                    <div class="event-header">
-                        <span class="event-time">${event.time}</span>
-                        ${headerContent}
-                    </div>
-                    
-                    <div class="event-location-group">
-                        <div class="event-location">${event.location}</div>
-                        ${mapIconHTML}
-                        ${noteIconHTML}
-                    </div>
-                    
-                    <div class="event-details">
-                        <span class="badge ${transportClass}">${transportIcon} ${event.transport}</span>
-                        <div class="cost-section" onclick="enableCostEdit(${dayIndex}, ${eventIndex}, this)">
-                            <span id="cost-display-${dayIndex}-${eventIndex}">
-                                ${storedCost ? `實支: ฿${storedCost}` : `預估: ฿${event.cost}`}
-                            </span>
-                        </div>
-                    </div>
-                    
-${notesHTML}
-                `;
-
-                timeline.appendChild(card);
-            });
-
-            container.appendChild(timeline);
-            
-            // 編輯模式下顯示新增按鈕
-            if (isEditMode) {
-                const addBtn = document.createElement('button');
-                addBtn.className = 'add-event-btn';
-                addBtn.textContent = '+ 新增行程';
-                addBtn.onclick = () => startAddEvent(dayIndex);
-                container.appendChild(addBtn);
-            }
-
-            // 每日總結
-            const summary = document.createElement('div');
-            summary.className = 'daily-summary';
-            summary.innerHTML = `
-                <div class="total-label">本日實際總花費</div>
-                <div class="total-amount">฿${dailyTotal}</div>
-                <button class="reset-btn" onclick="resetDailyCosts(${dayIndex})">重置本日花費</button>
-            `;
-            container.appendChild(summary);
-        }
-
-        // --- 編輯模式功能 & 排序 ---
+    // --- 記帳與備註邏輯 ---
+    window.toggleNotes = function(dayIndex, eventIndex, button) {
+        const notesElement = document.getElementById(`event-notes-${dayIndex}-${eventIndex}`);
         
-        // 輔助函數：取得用於排序的時間（取時間範圍的起始時間）
-        function getSortableTime(timeStr) {
-            // 確保 timeStr 存在且是字串
-            if (!timeStr || typeof timeStr !== 'string') return '99:99'; 
-            
-            // 如果是時間範圍 (例如 "09:00-10:00")，只取起始時間 ("09:00")
-            const parts = timeStr.split('-');
-            return parts[0].trim();
-        }
-
-        // 核心排序函數：依時間排序行程
-        function sortEventsByTime(events) {
-            events.sort((a, b) => {
-                const timeA = getSortableTime(a.time);
-                const timeB = getSortableTime(b.time);
-
-                // 標準字串比較對 HH:MM 格式有效
-                if (timeA < timeB) {
-                    return -1;
-                }
-                if (timeA > timeB) {
-                    return 1;
-                }
-                // 時間相同時不改變順序
-                return 0;
-            });
-        }
-
-        window.toggleEditMode = function() {
-            isEditMode = !isEditMode;
-            updateEditButtonUI();
-            renderDay(currentDayIndex);
-        }
-
-        function updateEditButtonUI() {
-            const btn = document.getElementById('edit-toggle-btn');
-            const iconElement = document.getElementById('edit-icon');
-
-            if (isEditMode) {
-                btn.classList.add('active');
-                btn.title = '結束編輯模式';
-                // 切換為 Save/Check 圖標 (表示進入編輯/保存狀態)
-                iconElement.innerHTML = `<path d="M5 12l5 5l8-8"/>`; 
-            } else {
-                btn.classList.remove('active');
-                btn.title = '切換編輯模式';
-                // 切換回 Pencil 圖標
-                iconElement.innerHTML = `<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>`;
-            }
-        }
-        
-        // 打開編輯/新增 Modal
-        function openEditModal(dayIndex, eventIndex, isNew = false) {
-            const modal = document.getElementById('edit-modal');
-            const form = document.getElementById('event-form');
-            const title = document.getElementById('modal-title');
-            
-            // 重設表單
-            form.reset();
-            
-            document.getElementById('event-day-index').value = dayIndex;
-            document.getElementById('event-index').value = eventIndex !== null ? eventIndex : -1;
-
-            if (isNew) {
-                title.textContent = '新增行程';
-                document.getElementById('event-estimated-cost-input').value = '0'; // 預設成本為 0
-            } else {
-                title.textContent = '編輯行程';
-                const event = appData.days[dayIndex].events[eventIndex];
-                document.getElementById('event-time-input').value = event.time;
-                document.getElementById('event-location-input').value = event.location;
-                document.getElementById('event-map-url-input').value = event.mapURL || '';
-                document.getElementById('event-note-url-input').value = event.noteURL || '';
-                document.getElementById('event-transport-input').value = event.transport;
-                document.getElementById('event-estimated-cost-input').value = event.cost;
-                document.getElementById('event-notes-input').value = event.notes;
-            }
-
-            modal.classList.add('visible');
-        }
-
-        window.closeEditModal = function() {
-            document.getElementById('edit-modal').classList.remove('visible');
-        }
-        
-        window.startEditEvent = function(dayIndex, eventIndex) {
-            openEditModal(dayIndex, eventIndex, false);
-        }
-
-        window.startAddEvent = function(dayIndex) {
-            openEditModal(dayIndex, null, true);
-        }
-
-        // 儲存事件處理 (包含排序邏輯)
-        function handleSaveEvent(e) {
-            e.preventDefault();
-            
-            const dayIndex = parseInt(document.getElementById('event-day-index').value);
-            const eventIndex = parseInt(document.getElementById('event-index').value);
-
-            const newEvent = {
-                time: document.getElementById('event-time-input').value,
-                location: document.getElementById('event-location-input').value,
-                mapURL: document.getElementById('event-map-url-input').value.trim(),
-                noteURL: document.getElementById('event-note-url-input').value.trim(),
-                transport: document.getElementById('event-transport-input').value,
-                cost: document.getElementById('event-estimated-cost-input').value || '0',
-                notes: document.getElementById('event-notes-input').value
-            };
-
-            if (eventIndex === -1) {
-                // 新增
-                appData.days[dayIndex].events.push(newEvent);
-            } else {
-                // 修改
-                appData.days[dayIndex].events[eventIndex] = newEvent;
-            }
-
-            // 排序當日所有行程
-            sortEventsByTime(appData.days[dayIndex].events);
-
-            saveData();
-            closeEditModal();
-            renderDay(dayIndex);
-        }
-
-        // 刪除事件處理
-        window.deleteEvent = function(dayIndex, eventIndex) {
-            // NOTE: 使用瀏覽器內建的 confirm() 在 iFrame 環境中可能不可見，但此處作為範例暫時保留。
-            // 建議在實際應用中替換為自定義 Modal。
-            if(!confirm("確定要刪除此行程嗎？")) return;
-
-            // 移除行程
-            appData.days[dayIndex].events.splice(eventIndex, 1);
-            saveData();
-            
-            // 刪除相關的 LocalStorage 數據
-            localStorage.removeItem(`trip_d${dayIndex}_e${eventIndex}${CHECK_KEY_SUFFIX}`);
-            localStorage.removeItem(`trip_d${dayIndex}_e${eventIndex}${COST_KEY_SUFFIX}`);
-            
-            // 重新排序並渲染
-            sortEventsByTime(appData.days[dayIndex].events);
-            renderDay(dayIndex);
-        }
-
-        // --- 記帳功能 (保留原有功能) ---
-
-        function formatNotes(text) {
-    if (!text) return "";
-
-    // 1. 將輸入文本按行分割並過濾空行
-    const lines = text.trim().split('\n').map(line => line.trim()).filter(line => line.length > 0);
-
-    let html = '<ul>'; // 使用無序列表來包裹所有內容
-
-    // 獨立出來的函數，用於執行高亮邏輯
-    const applyHighlighting = (item) => {
-        let itemHtml = item;
-
-        // 1. 對 ( ) 內容做高亮
-        // 找到所有被括號包裹的內容，並用 <span class="highlight-parentheses"> 包裹
-        itemHtml = itemHtml.replace(/(\([^)]+\))/g, (match) => {
-            // 使用 highlight-parentheses class
-            return `<span class="highlight-parentheses">${match}</span>`;
-        });
-
-        // 2. 對數字、價格、百分比做高亮 (例如: 100, 50%, 3個)
-        // 使用 price-info class
-        itemHtml = itemHtml.replace(/(\b\d+[\s%個]*)/g, (match) => {
-            return `<span class="price-info">${match}</span>`;
-        });
-
-        return itemHtml;
-    };
-
-
-    lines.forEach(line => {
-        // 核心修改：使用 indexOf 找第一個 '-' 符號
-        const separatorIndex = line.indexOf('-');
-
-        // 判斷是否有 `-` 且 `-` 後面有內容 (或前面內容不是純空)
-        if (separatorIndex !== -1 && (separatorIndex > 0 || separatorIndex < line.length - 1)) {
-            // 匹配成功：這是一行 "Title - Content" 結構的內容
-
-            const floorTitle = applyHighlighting(line.substring(0, separatorIndex).trim());
-            const content = line.substring(separatorIndex + 1).trim();
-
-            // 開始新的列表項，並使用 <h3> 作為樓層標題
-            html += `
-                <li class="floor-section">
-                    <h3 class="floor-title">✨ ${floorTitle}</h3>
-                    <ul class="floor-content-list">
-            `;
-
-            // 將內容按頓號/逗號分割成子項目 (確保分隔符號不在括號內)
-            const contentItems = content.split(/\s*(?:、|,)\s*(?![^(]*\))/).map(item => item.trim()).filter(item => item.length > 0);
-
-            contentItems.forEach(item => {
-                // 對分割後的子項目套用高亮
-                const itemHtml = applyHighlighting(item);
-                html += `<li>${itemHtml}</li>`;
-            });
-
-            html += `</ul></li>`;
-
-        } else if (line.length > 0) {
-            // 匹配失敗：這是一行獨立的內容
-            
-            const lineHtml = applyHighlighting(line);
-
-            html += `<li class="floor-section"><h3>✨${lineHtml}</h3></li>`;
-        }
-    });
-
-    // 確保最後的 <ul> 標籤被關閉
-    html += '</ul>';
-
-    return html;
-}
-
-        // 切換完成狀態
-        window.toggleComplete = function(dayIndex, eventIndex, checkbox) {
-            if (isEditMode) return; // 編輯模式下禁用打勾
-            const card = document.getElementById(`card-${dayIndex}-${eventIndex}`);
-            const key = `trip_d${dayIndex}_e${eventIndex}${CHECK_KEY_SUFFIX}`;
-            
-            if (checkbox.checked) {
-                localStorage.setItem(key, 'true');
-                card.classList.add('completed');
-            } else {
-                localStorage.removeItem(key);
-                card.classList.remove('completed');
-            }
-        };
-
-        // 啟用費用編輯
-        window.enableCostEdit = function(dayIndex, eventIndex, element) {
-            if (isEditMode) return; // 編輯模式下禁用記帳編輯
-            if (element.querySelector('input')) return;
-
-            const displaySpan = document.getElementById(`cost-display-${dayIndex}-${eventIndex}`);
-            const savedCost = localStorage.getItem(`trip_d${dayIndex}_e${eventIndex}${COST_KEY_SUFFIX}`);
-            const initialValue = savedCost ? savedCost : '';
-
-            element.innerHTML = `
-                <input type="number" class="cost-input" value="${initialValue}" 
-                placeholder="金額" 
-                onblur="saveCost(${dayIndex}, ${eventIndex}, this)" 
-                onkeydown="if(event.key === 'Enter') this.blur()">
-            `;
-            
-            const input = element.querySelector('input');
-            input.focus();
-        };
-
-        // 儲存費用並重繪
-        window.saveCost = function(dayIndex, eventIndex, input) {
-            const val = input.value;
-            const key = `trip_d${dayIndex}_e${eventIndex}${COST_KEY_SUFFIX}`;
-
-            if (val && val.trim() !== "" && parseInt(val) >= 0) {
-                localStorage.setItem(key, val);
-            } else {
-                localStorage.removeItem(key);
-            }
-
-            renderDay(dayIndex);
-        };
-
-        // 重置當日花費
-        window.resetDailyCosts = function(dayIndex) {
-            // NOTE: 使用瀏覽器內建的 confirm() 在 iFrame 環境中可能不可見，但此處作為範例暫時保留。
-            // 建議在實際應用中替換為自定義 Modal。
-            if(!confirm("確定要重置今天的記帳數據嗎？")) return;
-            
-            const dayData = appData.days[dayIndex];
-            dayData.events.forEach((_, eIndex) => {
-                localStorage.removeItem(`trip_d${dayIndex}_e${eIndex}${COST_KEY_SUFFIX}`);
-            });
-            renderDay(dayIndex);
-        };
-        
-        // --- 下拉選單功能 ---
-        window.toggleMoreMenu = function() {
-            const dropdown = document.getElementById('more-menu-dropdown');
-            dropdown.classList.toggle('show');
-        }
-
-        // --- QR Code 功能 ---
-        window.openQRModal = function() {
-            // 關閉下拉選單
-            document.getElementById('more-menu-dropdown').classList.remove('show');
-            // 開啟 QR modal
-            document.getElementById('qr-modal').classList.add('visible');
-            
-            // 預設選中 '我'
-            const btns = document.querySelectorAll('.qr-person-btn');
-            btns.forEach(b => b.textContent === '我' ? b.click() : null);
-        }
-
-        window.closeQRModal = function() {
-            document.getElementById('qr-modal').classList.remove('visible');
-        }
-
-        window.switchQR = function(person, btn) {
-            // 更新按鈕狀態
-            document.querySelectorAll('.qr-person-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // 更新圖片
-            const img = document.getElementById('qr-image-display');
-            img.src = `tdac_${person}.png`;
-        }
-        // --- QR Code 功能結束 ---
-
-        // 主題切換（預設深色）
-        // 注意：這裡的事件監聽要移到 load 或 onclick 裡，因為 DOM 重繪了
-        // 下面這段我整合進了上面的 more-menu 點擊事件，這裡保留初始化邏輯
-    const themeIcon = document.getElementById('theme-icon');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    // 綁定新的主題切換按鈕事件 (因為按鈕移動位置了)
-    document.getElementById('theme-toggle-btn').addEventListener('click', () => {
-        const current = document.body.getAttribute('data-theme');
-        const newTheme = current === 'dark' ? 'light' : 'dark';
-        
-        document.body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-        
-        // 切換後關閉選單
-        document.getElementById('more-menu-dropdown').classList.remove('show');
-    });
-
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            // 月亮 = 深色
-            themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+        if (notesElement.classList.contains('collapsed')) {
+            notesElement.classList.remove('collapsed');
+            button.textContent = '收起備註 🔼';
+            notesElement.style.maxHeight = notesElement.scrollHeight + "px";
         } else {
-            // 太陽 = 淺色
-            themeIcon.innerHTML = `
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            `;
+            notesElement.classList.add('collapsed');
+            button.textContent = '展開備註 🔽';
+            notesElement.style.maxHeight = '100px'; 
         }
     }
 
-        // === 日期導航欄 滾動向上自動隱藏（超順滑）===
-    let lastScrollY = window.scrollY;
-    const dayNav = document.querySelector('.day-nav');
+    function formatNotes(text) {
+        if (!text) return "";
 
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > lastScrollY && currentScrollY > 150) {
-            // 往下滾 → 隱藏導航欄
-            dayNav.classList.remove('show');
-            dayNav.classList.add('hide');
-        } else if (currentScrollY < lastScrollY) {
-            // 往上滾 → 顯示導航欄
-            dayNav.classList.remove('hide');
-            dayNav.classList.add('show');
-        }
-        
-        lastScrollY = currentScrollY;
-    });
+        const lines = text.trim().split('\n').map(line => line.trim()).filter(line => line.length > 0);
 
-        // === 點擊日期導航欄 → 平滑滾動到頁面頂部 ===
-    document.querySelector('.day-nav').addEventListener('click', (e) => {
-        // 只在點擊到 .day-nav 本身的空白處才觸發（避免點按鈕時也跳頂）
-        if (e.target === document.querySelector('.day-nav') || 
-            e.target.closest('.nav-container')) {
-            
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        let html = '<ul>';
+
+        const applyHighlighting = (item) => {
+            let itemHtml = item;
+
+            itemHtml = itemHtml.replace(/(\([^)]+\))/g, (match) => {
+                return `<span class="highlight-parentheses">${match}</span>`;
             });
-        }
-    });
 
-        // --- 備註收折功能邏輯 (新增) ---
-        window.toggleNotes = function(dayIndex, eventIndex, button) {
-            const notesElement = document.getElementById(`event-notes-${dayIndex}-${eventIndex}`);
-            
-            if (notesElement.classList.contains('collapsed')) {
-                // 展開
-                notesElement.classList.remove('collapsed');
-                button.textContent = '收起備註 🔼';
-                // 調整高度以確保內容完全顯示
-                notesElement.style.maxHeight = notesElement.scrollHeight + "px";
+            itemHtml = itemHtml.replace(/(\b\d+[\s%個]*)/g, (match) => {
+                return `<span class="price-info">${match}</span>`;
+            });
+
+            return itemHtml;
+        };
+
+
+        lines.forEach(line => {
+            const separatorIndex = line.indexOf('-');
+
+            if (separatorIndex !== -1 && (separatorIndex > 0 || separatorIndex < line.length - 1)) {
+
+                const floorTitle = applyHighlighting(line.substring(0, separatorIndex).trim());
+                const content = line.substring(separatorIndex + 1).trim();
+
+                html += `
+                    <li class="floor-section">
+                        <h3 class="floor-title">✨ ${floorTitle}</h3>
+                        <ul class="floor-content-list">
+                `;
+
+                const contentItems = content.split(/\s*(?:、|,)\s*(?![^(]*\))/).map(item => item.trim()).filter(item => item.length > 0);
+
+                contentItems.forEach(item => {
+                    const itemHtml = applyHighlighting(item);
+                    html += `<li>${itemHtml}</li>`;
+                });
+
+                html += `</ul></li>`;
+
+            } else if (line.length > 0) {
+                
+                const lineHtml = applyHighlighting(line);
+
+                html += `<li class="floor-section"><h3>✨${lineHtml}</h3></li>`;
+            }
+        });
+
+        html += '</ul>';
+
+        return html;
+    }
+
+    window.toggleComplete = function(dayIndex, eventIndex, checkbox) {
+        if (isEditMode) return;
+        const card = document.getElementById(`card-${dayIndex}-${eventIndex}`);
+        const key = `trip_d${dayIndex}_e${eventIndex}${CHECK_KEY_SUFFIX}`;
+        
+        if (checkbox.checked) {
+            localStorage.setItem(key, 'true');
+            card.classList.add('completed');
+        } else {
+            localStorage.removeItem(key);
+            card.classList.remove('completed');
+        }
+    };
+
+    window.enableCostEdit = function(dayIndex, eventIndex, element) {
+        if (isEditMode) return;
+        if (element.querySelector('input')) return;
+
+        const displaySpan = document.getElementById(`cost-display-${dayIndex}-${eventIndex}`);
+        const savedCost = localStorage.getItem(`trip_d${dayIndex}_e${eventIndex}${COST_KEY_SUFFIX}`);
+        const initialValue = savedCost ? savedCost : '';
+
+        element.innerHTML = `
+            <input type="number" class="cost-input" value="${initialValue}" 
+            placeholder="金額" 
+            onblur="saveCost(${dayIndex}, ${eventIndex}, this)" 
+            onkeydown="if(event.key === 'Enter') this.blur()">
+        `;
+        
+        const input = element.querySelector('input');
+        input.focus();
+    };
+
+    window.saveCost = function(dayIndex, eventIndex, input) {
+        const val = input.value;
+        const key = `trip_d${dayIndex}_e${eventIndex}${COST_KEY_SUFFIX}`;
+
+        if (val && val.trim() !== "" && parseInt(val) >= 0) {
+            localStorage.setItem(key, val);
+        } else {
+            localStorage.removeItem(key);
+        }
+
+        renderDay(dayIndex);
+    };
+
+    window.resetDailyCosts = function(dayIndex) {
+        if(!confirm("確定要重置今天的記帳數據嗎？")) return;
+        
+        const dayData = appData.days[dayIndex];
+        dayData.events.forEach((_, eIndex) => {
+            localStorage.removeItem(`trip_d${dayIndex}_e${eIndex}${COST_KEY_SUFFIX}`);
+        });
+        renderDay(dayIndex);
+    };
+
+    // --- Modal 與特殊功能 ---
+    window.copyAppDataToClipboard = function() {
+        const dataToCopy = JSON.stringify(appData, null, 4); 
+        
+        const textarea = document.createElement('textarea');
+        textarea.value = 'const originalTripData = ' + dataToCopy + ';';
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        
+        textarea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                showToast('✅ 數據已成功複製到剪貼簿！');
             } else {
-                // 收折
-                notesElement.classList.add('collapsed');
-                button.textContent = '展開備註 🔽';
-                // 使用 CSS 設定的收折高度
-                notesElement.style.maxHeight = '100px'; 
+                showToast('❌ 複製失敗，請手動複製。');
             }
+        } catch (err) {
+            console.error('Copy command failed:', err);
+            showToast('❌ 複製失敗，請手動複製。');
         }
-        // --- 備註收折功能邏輯 (結束) ---
+        
+        document.body.removeChild(textarea);
+        
+        document.getElementById('more-menu-dropdown').classList.remove('show');
+    }
 
-        // ===== 重新從伺服器載入原始資料 =====
-    document.getElementById('reload-server-data-btn')?.addEventListener('click', () => {
-        const userConfirmed = confirm(
-            "⚠️ 這會把你目前在 localStorage 裡的所有自訂行程、記帳、完成狀態全部覆蓋，恢復成最一開始的原始行程！\n\n確定要繼續嗎？"
-        );
+    window.toggleMoreMenu = function() {
+        const dropdown = document.getElementById('more-menu-dropdown');
+        dropdown.classList.toggle('show');
+    }
 
-        if (!userConfirmed) return;
+    function openEditModal(dayIndex, eventIndex, isNew = false) {
+        const modal = document.getElementById('edit-modal');
+        const form = document.getElementById('event-form');
+        const title = document.getElementById('modal-title');
+        
+        form.reset();
+        
+        document.getElementById('event-day-index').value = dayIndex;
+        document.getElementById('event-index').value = eventIndex !== null ? eventIndex : -1;
 
-        // 1. 用原始資料覆蓋目前記憶體中的 appData
-        appData = JSON.parse(JSON.stringify(originalTripData));   // 深拷貝，避免之後改到原始資料
-
-        // 2. 清空所有相關的 localStorage（行程、打勾、記帳…）
-        localStorage.removeItem(STORAGE_KEY);
-
-        // 清除所有「完成」與「實支」的 key（以 trip_ 開頭的）
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key && (key.startsWith('trip_') || key.startsWith('bangkokTripData'))) {
-                localStorage.removeItem(key);
-            }
+        if (isNew) {
+            title.textContent = '新增行程';
+            document.getElementById('event-estimated-cost-input').value = '0';
+        } else {
+            title.textContent = '編輯行程';
+            const event = appData.days[dayIndex].events[eventIndex];
+            document.getElementById('event-time-input').value = event.time;
+            document.getElementById('event-location-input').value = event.location;
+            document.getElementById('event-map-url-input').value = event.mapURL || '';
+            document.getElementById('event-note-url-input').value = event.noteURL || '';
+            document.getElementById('event-transport-input').value = event.transport;
+            document.getElementById('event-estimated-cost-input').value = event.cost;
+            document.getElementById('event-notes-input').value = event.notes;
         }
 
-        // 3. 重新寫入乾淨的原始資料
-        saveData();   // 會把新的 appData 存進 localStorage
+        modal.classList.add('visible');
+    }
 
-        // 4. 提示成功 + 重新整理畫面
-        showToast('✅ 已成功從伺服器重新載入原始行程！');
-        setTimeout(() => location.reload(), 1200);   // 稍微延遲讓 toast 能看到
-    });
-    </script>
+    window.closeEditModal = function() {
+        document.getElementById('edit-modal').classList.remove('visible');
+    }
+    
+    window.startEditEvent = function(dayIndex, eventIndex) {
+        openEditModal(dayIndex, eventIndex, false);
+    }
+
+    window.startAddEvent = function(dayIndex) {
+        openEditModal(dayIndex, null, true);
+    }
+
+    window.openQRModal = function() {
+        document.getElementById('more-menu-dropdown').classList.remove('show');
+        document.getElementById('qr-modal').classList.add('visible');
+        
+        const btns = document.querySelectorAll('.qr-person-btn');
+        btns.forEach(b => b.textContent === '我' ? b.click() : null);
+    }
+
+    window.closeQRModal = function() {
+        document.getElementById('qr-modal').classList.remove('visible');
+    }
+
+    window.switchQR = function(person, btn) {
+        document.querySelectorAll('.qr-person-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const img = document.getElementById('qr-image-display');
+        img.src = `tdac_${person}.png`;
+    }
+    
+</script>
 </body>
 </html>
